@@ -1,0 +1,830 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BLOCK_N1	nn.c	407;"	d	file:
+BLOCK_N2	nn.c	408;"	d	file:
+CC	Makefile	/^CC=gcc $/;"	m
+CHECKFINITE	gmm.c	245;"	d	file:
+Cache	threads.py	/^class Cache:$/;"	c
+DP_DMU	gmm.c	560;"	d	file:
+DP_DMU	gmm.c	603;"	d	file:
+DP_DSIGMA	gmm.c	662;"	d	file:
+DP_DSIGMA	gmm.c	692;"	d	file:
+DummyState	threads.py	/^class DummyState:$/;"	c
+E	vector.c	846;"	d	file:
+E	vector.c	877;"	d	file:
+EXTRACFLAGS	Makefile	/^eigs.o: EXTRACFLAGS=$(LAPACKCFLAGS) $(LAPACKCFLAGS) $(EXTRAEIGSFLAG) $(OPENMPFLAG)$/;"	m
+EXTRACFLAGS	Makefile	/^gmm.o: EXTRACFLAGS=$(THREADCFLAGS) $(LAPACKCFLAGS)$/;"	m
+EXTRACFLAGS	Makefile	/^hkm.o: EXTRACFLAGS=$(THREADCFLAGS)$/;"	m
+EXTRACFLAGS	Makefile	/^kmeans.o: EXTRACFLAGS=$(THREADCFLAGS)$/;"	m
+EXTRACFLAGS	Makefile	/^kmlsh.o: EXTRACFLAGS=$(THREADCFLAGS) $(LAPACKCFLAGS)$/;"	m
+EXTRACFLAGS	Makefile	/^machinedeps.o:  EXTRACFLAGS=$(OPENMPFLAG)$/;"	m
+EXTRACFLAGS	Makefile	/^matrix.o: EXTRACFLAGS=$(LAPACKCFLAGS) $(THREADCFLAGS) $(EXTRAMATRIXFLAG) $(OPENMPFLAG)$/;"	m
+EXTRACFLAGS	Makefile	/^nn.o: EXTRACFLAGS=$(LAPACKCFLAGS) $(THREADCFLAGS) $(OPENMPFLAG)$/;"	m
+EXTRACFLAGS	Makefile	/^yael_wrap.o: EXTRACFLAGS=$(PYTHONCFLAGS) $(NUMPYCFLAGS)$/;"	m
+EXTRAEIGSFLAG	Makefile	/^  EXTRAEIGSFLAG=-DHAVE_ARPACK$/;"	m
+EXTRAMATRIXFLAG	Makefile	/^  EXTRAMATRIXFLAG=-DHAVE_ARPACK$/;"	m
+EXTRAYAELLDFLAG	Makefile	/^  EXTRAYAELLDFLAG=$(ARPACKLDFLAGS)$/;"	m
+F	gmm.c	301;"	d	file:
+F	gmm.c	326;"	d	file:
+GET_MALLOC_HOOK	machinedeps.c	251;"	d	file:
+GMM_FLAGS_1SIGMA	gmm.h	72;"	d
+GMM_FLAGS_MU	gmm.h	79;"	d
+GMM_FLAGS_NO_NORM	gmm.h	69;"	d
+GMM_FLAGS_PURE_KMEANS	gmm.h	75;"	d
+GMM_FLAGS_SIGMA	gmm.h	78;"	d
+GMM_FLAGS_W	gmm.h	66;"	d
+GMM_H_INCLUDED	gmm.h	40;"	d
+HAVE_QSORT_R	machinedeps.h	43;"	d
+HAVE_TLS	machinedeps.h	47;"	d
+HKM_READ_ERROR	hkm.c	202;"	d	file:
+HKM_WRITE_ERROR	hkm.c	210;"	d	file:
+KMEANS_CHI2	kmeans.h	56;"	d
+KMEANS_H_INCLUDED	kmeans.h	40;"	d
+KMEANS_INIT_BERKELEY	kmeans.h	50;"	d
+KMEANS_INIT_RANDOM	kmeans.h	52;"	d
+KMEANS_INIT_USER	kmeans.h	53;"	d
+KMEANS_L1	kmeans.h	55;"	d
+KMEANS_NORMALIZE_CENTS	kmeans.h	51;"	d
+KMEANS_QUIET	kmeans.h	49;"	d
+KMLSH_BLOCK_SIZE	kmlsh.h	92;"	d
+KMLSH_IDX_READ_ERROR	kmlsh.c	576;"	d	file:
+KMLSH_IDX_READ_ERROR	kmlsh.c	650;"	d	file:
+KMLSH_IDX_WRITE_ERROR	kmlsh.c	572;"	d	file:
+KMLSH_IDX_WRITE_ERROR	kmlsh.c	649;"	d	file:
+KMLSH_NB_ITER_MAX	kmlsh.h	93;"	d
+KMLSH_NT	kmlsh.h	87;"	d
+KMLSH_QUIET	kmlsh.h	88;"	d
+KMLSH_READ_ERROR	kmlsh.c	568;"	d	file:
+KMLSH_READ_ERROR	kmlsh.c	648;"	d	file:
+KMLSH_VECTYPE_BVEC	kmlsh.h	96;"	d
+KMLSH_VECTYPE_FVEC	kmlsh.h	95;"	d
+KMLSH_WRITE_ERROR	kmlsh.c	564;"	d	file:
+KMLSH_WRITE_ERROR	kmlsh.c	647;"	d	file:
+KMLSH_WRITE_INTER_NHASH	kmlsh.h	89;"	d
+LIBOBJ	Makefile	/^LIBOBJ=matrix.o vector.o nn.o kmeans.o hkm.o gmm.o eigs.o \\$/;"	m
+MACHINEDEPS_H_INCLUDED	machinedeps.h	40;"	d
+MAX	nn.c	54;"	d	file:
+MIN	nn.c	412;"	d	file:
+MIN	nn.c	55;"	d	file:
+MINS	nn.c	510;"	d	file:
+MINS	nn.c	553;"	d	file:
+MU	gmm.c	538;"	d	file:
+MU	gmm.c	702;"	d	file:
+NEW	matrix.c	54;"	d	file:
+NEWA	eigs.c	271;"	d	file:
+NEWA	matrix.c	52;"	d	file:
+NEWA	nn.c	53;"	d	file:
+NEWA	sorting.c	48;"	d	file:
+NEWAC	matrix.c	53;"	d	file:
+NN_H_INCLUDED	nn.h	42;"	d
+NV_MAGICCONST	vector.c	177;"	d	file:
+OPENMPFLAG	Makefile	/^  OPENMPFLAG = -fopenmp$/;"	m
+P	gmm.c	302;"	d	file:
+P	gmm.c	327;"	d	file:
+P	gmm.c	536;"	d	file:
+P	gmm.c	700;"	d	file:
+PCIter	threads.py	/^class PCIter:$/;"	c
+PERM	sorting.c	107;"	d	file:
+PERM	sorting.c	112;"	d	file:
+PERM	sorting.c	153;"	d	file:
+PERM	sorting.c	64;"	d	file:
+ParallelIter	threads.py	/^class ParallelIter:$/;"	c
+ParallelMap	threads.py	/^class ParallelMap:$/;"	c
+Pool	threads.py	/^class Pool:$/;"	c
+ProducerConsumer	threads.py	/^class ProducerConsumer:$/;"	c
+READANDCHECK	gmm.c	737;"	d	file:
+READANDCHECK	vector.c	772;"	d	file:
+READANDCHECK	vector.c	815;"	d	file:
+RunOnSet	threads.py	/^class RunOnSet:$/;"	c
+SET_MALLOC_HOOK	machinedeps.c	144;"	d	file:
+SET_MALLOC_HOOKS	machinedeps.c	147;"	d	file:
+SET_NT	matrix.c	752;"	d	file:
+SET_NT	matrix.c	756;"	d	file:
+SET_NT	nn.c	849;"	d	file:
+SET_NT	nn.c	853;"	d	file:
+SIGMA	gmm.c	539;"	d	file:
+SIGMA	gmm.c	703;"	d	file:
+SORTING_H_INCLUDED	sorting.h	40;"	d
+SPECTRAL_CLUSTERING_H_INCLUDED	spectral_clustering.h	40;"	d
+SWAPFLOAT	sorting.c	113;"	d	file:
+SWAPFLOAT	sorting.c	154;"	d	file:
+SWAPFPTR	sorting.c	108;"	d	file:
+SWAPFPTR	sorting.c	65;"	d	file:
+ThreadsafeCache	threads.py	/^class ThreadsafeCache(Cache):$/;"	c
+ThreadsafeCache2	threads.py	/^class ThreadsafeCache2(Cache):$/;"	c
+ThreadsafeState	threads.py	/^class ThreadsafeState:$/;"	c
+UNSET_MALLOC_HOOK	machinedeps.c	145;"	d	file:
+UNSET_MALLOC_HOOKS	machinedeps.c	154;"	d	file:
+V	gmm.c	537;"	d	file:
+V	gmm.c	701;"	d	file:
+V2P	gmm.c	661;"	d	file:
+V2P	gmm.c	693;"	d	file:
+VLAD_H_INCLUDED	vlad.h	40;"	d
+VP	gmm.c	540;"	d	file:
+VerbLock	threads.py	/^class VerbLock:  $/;"	c
+WRITEANDCHECK	gmm.c	724;"	d	file:
+WritePriorityLock	threads.py	/^class WritePriorityLock:$/;"	c
+__USE_GNU	machinedeps.c	53;"	d	file:
+__binheap_h	binheap.h	40;"	d
+__contains__	threads.py	/^  def __contains__(self,i):$/;"	m	class:Cache	file:
+__eigs_h	eigs.h	40;"	d
+__getitem__	threads.py	/^  def __getitem__(self,*args):$/;"	m	class:ThreadsafeCache	file:
+__getitem__	threads.py	/^  def __getitem__(self,i):$/;"	m	class:Cache	file:
+__getitem__	threads.py	/^  def __getitem__(self,k):$/;"	m	class:ThreadsafeCache2	file:
+__hkm_h	hkm.h	40;"	d
+__init__	threads.py	/^   def __init__(self,n,l,f):$/;"	m	class:ParallelMap
+__init__	threads.py	/^  def __init__(self):$/;"	m	class:ThreadsafeState
+__init__	threads.py	/^  def __init__(self):$/;"	m	class:WritePriorityLock
+__init__	threads.py	/^  def __init__(self,cons):$/;"	m	class:Pool
+__init__	threads.py	/^  def __init__(self,f,maxsz=32768):$/;"	m	class:ThreadsafeCache2
+__init__	threads.py	/^  def __init__(self,lock):      $/;"	m	class:VerbLock
+__init__	threads.py	/^  def __init__(self,maxbuf,nprod):$/;"	m	class:ProducerConsumer
+__init__	threads.py	/^  def __init__(self,maxsz=32768):$/;"	m	class:Cache
+__init__	threads.py	/^  def __init__(self,maxsz=32768):$/;"	m	class:ThreadsafeCache
+__init__	threads.py	/^  def __init__(self,n,l,f):$/;"	m	class:PCIter
+__init__	threads.py	/^  def __init__(self,n,l,f):$/;"	m	class:ParallelIter
+__init__	threads.py	/^  def __init__(self,n,l,f):$/;"	m	class:RunOnSet
+__iter__	threads.py	/^  def __iter__(self):$/;"	m	class:PCIter	file:
+__iter__	threads.py	/^  def __iter__(self):$/;"	m	class:ParallelIter	file:
+__kmlsh_h	kmlsh.h	40;"	d
+__matrix_h	matrix.h	40;"	d
+__setitem__	threads.py	/^  def __setitem__(self,*args):$/;"	m	class:ThreadsafeCache	file:
+__setitem__	threads.py	/^  def __setitem__(self,*args):$/;"	m	class:ThreadsafeCache2	file:
+__setitem__	threads.py	/^  def __setitem__(self,i,v):$/;"	m	class:Cache	file:
+__thread	machinedeps.h	49;"	d
+__vector_h	vector.h	40;"	d
+_check_row_float32	ynumpy.py	/^def _check_row_float32(a): $/;"	f
+_check_row_int32	ynumpy.py	/^def _check_row_int32(a): $/;"	f
+_gmm_del	ynumpy.py	/^def _gmm_del(gmm): $/;"	f
+_gmm_to_numpy	ynumpy.py	/^def _gmm_to_numpy(gmm): $/;"	f
+_numpy_to_gmm	ynumpy.py	/^def _numpy_to_gmm((w, mu, sigma)):$/;"	f
+a	nn.c	/^  const float *a,*b;$/;"	m	struct:__anon4	file:
+acquire	threads.py	/^  def acquire(self,*x):      $/;"	m	class:VerbLock
+add_matmul	nn.c	/^static void add_matmul (FINTEGER d, FINTEGER na, FINTEGER nb,$/;"	f	file:
+add_matvecmul	nn.c	/^static void add_matvecmul (FINTEGER d, FINTEGER nb,$/;"	f	file:
+alloc_block_t	machinedeps.c	/^} alloc_block_t;$/;"	t	typeref:struct:__anon5	file:
+alt_allocate_lock	threads.py	/^def alt_allocate_lock():$/;"	f
+arpack_eigs_begin	eigs.c	/^arpack_eigs_t *arpack_eigs_begin(int n,int nev) {$/;"	f
+arpack_eigs_end	eigs.c	/^int arpack_eigs_end(arpack_eigs_t *ae,$/;"	f
+arpack_eigs_step	eigs.c	/^int arpack_eigs_step(arpack_eigs_t *ae,$/;"	f
+arpack_eigs_t	eigs.c	/^struct arpack_eigs_t {$/;"	s	file:
+arpack_eigs_t	eigs.h	/^typedef struct arpack_eigs_t arpack_eigs_t; $/;"	t	typeref:struct:arpack_eigs_t
+b	nn.c	/^  const float *a,*b;$/;"	m	struct:__anon4	file:
+b2fvec_cpy_subvectors	vector.c	/^void b2fvec_cpy_subvectors (const unsigned char * v, int * idx, int d, int nout, float * vout)$/;"	f
+b2fvec_fread	vector.c	/^int b2fvec_fread (FILE * f, float * v)$/;"	f
+b2fvecs_fread	vector.c	/^long b2fvecs_fread (FILE * f, float * v, long n)$/;"	f
+b2fvecs_new_read	vector.c	/^int b2fvecs_new_read (const char *fname, int *d_out, float **v_out)$/;"	f
+b2fvecs_read	vector.c	/^int b2fvecs_read (const char *fname, int d, int n, float *v)$/;"	f
+bf	hkm.h	/^  int bf;                \/* the branching factor *\/$/;"	m	struct:hkm_s
+binary_entropy	vector.c	/^double binary_entropy (double p)$/;"	f
+blocks	machinedeps.c	/^  alloc_block_t *blocks;$/;"	m	struct:__anon6	file:
+bof_compute	vlad.c	/^void bof_compute (int k, int d, const float *centroids, $/;"	f
+bof_compute_ma	vlad.c	/^void bof_compute_ma (int k, int d, const float *centroids, $/;"	f
+bof_compute_subsets	vlad.c	/^void bof_compute_subsets(int k, int d, const float *centroids, $/;"	f
+boundaries	kmlsh.h	/^  int * boundaries;  $/;"	m	struct:kmlsh_idx_s
+bvec2fvec	vector.c	/^float * bvec2fvec (const unsigned char * v, long n)$/;"	f
+bvec_cpy	vector.c	/^void bvec_cpy (unsigned char * vdest, const unsigned char * vsource, long n)$/;"	f
+bvec_fread	vector.c	/^int bvec_fread (FILE * f, unsigned char * v, int d_alloc)$/;"	f
+bvec_fread_raw	vector.c	/^int bvec_fread_raw (FILE *f, unsigned char * v, long n) $/;"	f
+bvec_fwrite_raw	vector.c	/^int bvec_fwrite_raw(FILE *fo, const unsigned char *v, long d) $/;"	f
+bvec_new	vector.c	/^unsigned char * bvec_new (long n)$/;"	f
+bvec_new_0	vector.c	/^unsigned char *bvec_new_0 (long n)$/;"	f
+bvec_new_fread_raw	vector.c	/^unsigned char *bvec_new_fread_raw(FILE * f, long d) $/;"	f
+bvec_new_read_raw	vector.c	/^unsigned char *bvec_new_read_raw(const char * fname, long d) $/;"	f
+bvec_print	vector.c	/^void bvec_print (const unsigned char * v, int n)$/;"	f
+bvec_write_raw	vector.c	/^int bvec_write_raw (const char *fname, const unsigned char *v, long d)$/;"	f
+bvecs_fread	vector.c	/^long bvecs_fread (FILE * f, unsigned char * v, long n, int d_alloc)$/;"	f
+bvecs_fsize	vector.c	/^long bvecs_fsize (const char * fname, int *d_out, int *n_out)$/;"	f
+bvecs_new_from_siftgeo	vector.c	/^int bvecs_new_from_siftgeo(const char *fname, $/;"	f
+bvecs_new_read	vector.c	/^int bvecs_new_read (const char *fname, int *d_out, unsigned char **v_out) {$/;"	f
+bvectofvec	vector.c	/^void bvectofvec (const unsigned char * v, float * vb, long n)$/;"	f
+centroids	hkm.h	/^  float ** centroids;    \/* centroids for all levels *\/$/;"	m	struct:hkm_s
+centroids	kmlsh.h	/^  float ** centroids;  \/* all centroids *\/$/;"	m	struct:kmlsh_s
+clear	threads.py	/^  def clear(self):$/;"	m	class:Pool
+clr_eol	threads.py	/^clr_eol="\\033[K"$/;"	v
+clustering_kmeans	kmeans.c	/^float *clustering_kmeans (int n, int d,$/;"	f
+clustering_kmeans_assign	kmeans.c	/^float *clustering_kmeans_assign (int n, int d,$/;"	f
+clustering_kmeans_assign_with_score	kmeans.c	/^float *clustering_kmeans_assign_with_score (int n, int di,$/;"	f
+cmp_floats	binheap.c	/^static int cmp_floats (const void * v1, const void * v2)$/;"	f	file:
+cmp_stops_for_increasing	sorting.c	/^static int cmp_stops_for_increasing (const void *v1, const void *v2)$/;"	f	file:
+codebook	nn.c	/^  const float *codebook;$/;"	m	struct:__anon3	file:
+collector_free	machinedeps.c	/^static void collector_free (void *ptr, const __malloc_ptr_t f) {$/;"	f	file:
+collector_malloc	machinedeps.c	/^static void *collector_malloc (size_t size, const __malloc_ptr_t f) {$/;"	f	file:
+collector_memalign	machinedeps.c	/^static void *collector_memalign (size_t alignment, size_t size, const __malloc_ptr_t f) {$/;"	f	file:
+collector_realloc	machinedeps.c	/^static void *collector_realloc (void *ptr_in, size_t size, const __malloc_ptr_t f) {$/;"	f	file:
+compare_for_fvec_sort	sorting.c	/^ static int compare_for_fvec_sort (const void *v1, const void *v2)$/;"	f	file:
+compare_for_ivec_sort	sorting.c	/^static int compare_for_ivec_sort (const void *v1, const void *v2)$/;"	f	file:
+compare_for_k_min	sorting.c	/^static int compare_for_k_min (const void *v1, const void *v2)$/;"	f	file:
+compare_for_sort_index	sorting.c	/^static int compare_for_sort_index (const void *v1, const void *v2)$/;"	f	file:
+compare_for_sort_index_f	sorting.c	/^static int compare_for_sort_index_f (const void *v1, const void *v2)$/;"	f	file:
+compress_labels_by_disratio	sorting.c	/^int compress_labels_by_disratio (int *labels, const float *vals, int n, float ratio) {$/;"	f
+compute_cross_distances	nn.c	/^void compute_cross_distances (int d, int na, int nb,$/;"	f
+compute_cross_distances_alt	nn.c	/^void compute_cross_distances_alt (int distance_type, int d, int na, int nb,$/;"	f
+compute_cross_distances_alt_nonpacked	nn.c	/^void compute_cross_distances_alt_nonpacked (int distance_type, int d, int na, int nb,$/;"	f
+compute_cross_distances_alt_thread	nn.c	/^void compute_cross_distances_alt_thread (int distance_type,int d, int na, int nb,$/;"	f
+compute_cross_distances_nonpacked	nn.c	/^void compute_cross_distances_nonpacked (int d, int na, int nb,$/;"	f
+compute_cross_distances_task	nn.c	/^void compute_cross_distances_task (void *arg, int tid, int i) $/;"	f
+compute_cross_distances_thread	nn.c	/^void compute_cross_distances_thread (int d, int na, int nb,$/;"	f
+compute_distances_1	nn.c	/^void compute_distances_1 (int d, int nb,$/;"	f
+compute_distances_1_nonpacked	nn.c	/^void compute_distances_1_nonpacked (int d, int nb,$/;"	f
+compute_distances_1_nonpacked_thread	nn.c	/^void compute_distances_1_nonpacked_thread (int d, int nb,$/;"	f
+compute_distances_1_thread	nn.c	/^void compute_distances_1_thread (int d, int nb,$/;"	f
+compute_mahalanobis_sqr	gmm.c	/^static void compute_mahalanobis_sqr(int n,long k,long d,$/;"	f	file:
+compute_p_params_t	gmm.c	/^} compute_p_params_t;$/;"	t	typeref:struct:__anon1	file:
+compute_p_task_fun	gmm.c	/^static void compute_p_task_fun (void *arg, int tid, int i) {$/;"	f	file:
+compute_sum_dcov	gmm.c	/^static void compute_sum_dcov(int ni,int ki,int di,$/;"	f	file:
+compute_sum_dcov_t	gmm.c	/^} compute_sum_dcov_t;$/;"	t	typeref:struct:__anon2	file:
+compute_sum_dcov_task_fun	gmm.c	/^static void compute_sum_dcov_task_fun (void *arg, int tid, int i) {$/;"	f	file:
+compute_sum_dcov_thread	gmm.c	/^static void compute_sum_dcov_thread(int ni,int ki,int di,$/;"	f	file:
+compute_tasks	machinedeps.c	/^void compute_tasks (int n, int nthread,$/;"	f
+cons	threads.py	/^  def cons(self):$/;"	m	class:ProducerConsumer
+copy_from_no	sorting.c	/^  int copy_from_no;             \/* handle duplicate values *\/$/;"	m	struct:__anon8	file:
+count_cpu	machinedeps.c	/^int count_cpu (void) {$/;"	f
+count_cpu	machinedeps.c	/^int count_cpu (void)$/;"	f
+count_cpu	machinedeps.c	/^int count_cpu() {$/;"	f
+count_cpu	threads.py	/^from yael import count_cpu$/;"	i
+cov	matrix.h	/^  float * cov;$/;"	m	struct:pca_online_s
+cross_distances	ynumpy.py	/^def cross_distances(a, b, distance_type = 12):$/;"	f
+cross_distances_L1_vec	nn.c	/^static void cross_distances_L1_vec(int d,int na,int nb,$/;"	f	file:
+cross_distances_chi2_vec	nn.c	/^static void cross_distances_chi2_vec (int d, int na, int nb,$/;"	f	file:
+cross_distances_params_t	nn.c	/^} cross_distances_params_t;$/;"	t	typeref:struct:__anon4	file:
+d	gmm.c	/^  long n,k,d;$/;"	m	struct:__anon2	file:
+d	gmm.h	/^  int d;          \/*!< vector dimension *\/$/;"	m	struct:gmm_s
+d	hkm.h	/^  int d;                 \/* dimension of the input vectors *\/$/;"	m	struct:hkm_s
+d	kmlsh.h	/^  int d;               \/* vector dimensionality *\/$/;"	m	struct:kmlsh_s
+d	matrix.h	/^  int d;$/;"	m	struct:pca_online_s
+d	nn.c	/^  int d, na, nb;$/;"	m	struct:__anon4	file:
+d	nn.c	/^  int nclust, d, k;$/;"	m	struct:__anon3	file:
+delta_alloc	machinedeps.h	/^  size_t delta_alloc;           \/* total allocated minus deallocated $/;"	m	struct:__anon7
+dis	kmlsh.h	/^  float * dis;   \/* corresponding distances *\/$/;"	m	struct:nnlist_s
+dist2	nn.c	/^  float *dist2;$/;"	m	struct:__anon4	file:
+distance_type	nn.c	/^  int distance_type;  $/;"	m	struct:__anon3	file:
+distance_type	nn.c	/^  int distance_type; \/* <0 mreans optimized L2 distance *\/$/;"	m	struct:__anon4	file:
+do_norm	gmm.c	/^  int do_norm;$/;"	m	struct:__anon1	file:
+drand_r	kmeans.c	/^static double drand_r(unsigned int *seed) {$/;"	f	file:
+drand_r	vector.c	/^static double drand_r(unsigned int *seed) {$/;"	f	file:
+dvec_new	vector.c	/^double *dvec_new (long n)$/;"	f
+dvec_new_0	vector.c	/^double * dvec_new_0 (long n)$/;"	f
+eigs_reorder	eigs.c	/^void eigs_reorder (int d, float * eigval, float * eigvec, int criterion)$/;"	f
+eigs_sym	eigs.c	/^int eigs_sym (int di, const float * m, float * eigval, float * eigvec)$/;"	f
+eigs_sym_part	eigs.c	/^int eigs_sym_part (int ni, const float * a, int nev, float * sout, float * vout) {$/;"	f
+eigval	matrix.h	/^  float * eigval;$/;"	m	struct:pca_online_s
+eigvec	matrix.h	/^  float * eigvec;$/;"	m	struct:pca_online_s
+enabled	machinedeps.c	/^  int enabled;$/;"	m	struct:__anon6	file:
+errno	threads.py	/^import sys,time,inspect,thread,threading,os,errno,types,traceback$/;"	i
+extract_lines	ynumpy.py	/^def extract_lines(a, indices):$/;"	f
+extract_rows_cols	ynumpy.py	/^def extract_rows_cols(K, subset_rows, subset_cols):$/;"	f
+f	threads.py	/^   def f(self,(i,x)):$/;"	m	class:ParallelMap
+fbinheap_add	binheap.c	/^void fbinheap_add (fbinheap_t * bh, int label, float val)$/;"	f
+fbinheap_addn	binheap.c	/^void fbinheap_addn (fbinheap_t * bh, int n, const int * label, const float * v)$/;"	f
+fbinheap_addn_label_range	binheap.c	/^void fbinheap_addn_label_range (fbinheap_t * bh, int n, int label0, const float * v)$/;"	f
+fbinheap_delete	binheap.c	/^void fbinheap_delete (fbinheap_t * bh)$/;"	f
+fbinheap_display	binheap.c	/^void fbinheap_display (fbinheap_t * bh)$/;"	f
+fbinheap_init	binheap.c	/^void fbinheap_init (fbinheap_t *bh, int maxk) $/;"	f
+fbinheap_new	binheap.c	/^fbinheap_t * fbinheap_new (int maxk)$/;"	f
+fbinheap_pop	binheap.c	/^void fbinheap_pop (fbinheap_t * bh)$/;"	f
+fbinheap_push	binheap.c	/^static void fbinheap_push (fbinheap_t * bh, int label, float val)$/;"	f	file:
+fbinheap_reset	binheap.c	/^void fbinheap_reset (fbinheap_t *bh)$/;"	f
+fbinheap_s	binheap.h	/^struct fbinheap_s {$/;"	s
+fbinheap_sizeof	binheap.c	/^size_t fbinheap_sizeof (int maxk) $/;"	f
+fbinheap_sort	binheap.c	/^void fbinheap_sort (fbinheap_t * bh, int * perm, float *v)$/;"	f
+fbinheap_sort_labels	binheap.c	/^void fbinheap_sort_labels (fbinheap_t * bh, int * perm)$/;"	f
+fbinheap_sort_per_labels	binheap.c	/^void fbinheap_sort_per_labels (fbinheap_t * bh, int * perm, float *v) {$/;"	f
+fbinheap_sort_values	binheap.c	/^void fbinheap_sort_values (fbinheap_t * bh, float * v)$/;"	f
+fbinheap_t	binheap.h	/^typedef struct fbinheap_s fbinheap_t;$/;"	t	typeref:struct:fbinheap_s
+find_labels	sorting.c	/^void find_labels (const int *labels, int nres, int *ilabels, int nilabels)$/;"	f
+first	matrix.c	/^static int first = 1;$/;"	v	file:
+fisher	ynumpy.py	/^def fisher(gmm_npy, v, $/;"	f
+fmat_add_to_columns	matrix.c	/^void fmat_add_to_columns(int d,int n,float *v,const float *avg) {$/;"	f
+fmat_center_columns	matrix.c	/^float *fmat_center_columns(int d,int n,float *v) $/;"	f
+fmat_get_columns	matrix.c	/^void fmat_get_columns (const float *a, int d, int ncolout, const int *cols, float *b) {$/;"	f
+fmat_get_rows_cols	matrix.c	/^void fmat_get_rows_cols(const float *a, int d, $/;"	f
+fmat_get_submatrix	matrix.c	/^float *fmat_get_submatrix (const float *a, int nrow, $/;"	f
+fmat_mul	matrix.c	/^void fmat_mul (const float *left, const float *right, int m, int n, int k, float *mout) {$/;"	f
+fmat_mul_full	matrix.c	/^void fmat_mul_full(const float *left, const float *right,$/;"	f
+fmat_mul_full_nonpacked	matrix.c	/^void fmat_mul_full_nonpacked(const float *left, const float *right,$/;"	f
+fmat_mul_tl	matrix.c	/^void fmat_mul_tl (const float *left, const float *right, int m, int n, int k, float *mout) {$/;"	f
+fmat_mul_tlr	matrix.c	/^void fmat_mul_tlr (const float *left, const float *right, int m, int n, int k, float *mout) {$/;"	f
+fmat_mul_tr	matrix.c	/^void fmat_mul_tr (const float *left, const float *right, int m, int n, int k, float *mout) {$/;"	f
+fmat_mul_tv	matrix.c	/^void fmat_mul_tv(int mi,int ni,const float*a,int ldai,$/;"	f
+fmat_mul_v	matrix.c	/^void fmat_mul_v(int mi,int ni,const float*a,int ldai,$/;"	f
+fmat_new	matrix.c	/^float *fmat_new (int nrow, int ncol)$/;"	f
+fmat_new_0	matrix.c	/^float *fmat_new_0 (int nrow, int ncol)$/;"	f
+fmat_new_covariance	matrix.c	/^float *fmat_new_covariance (int d, int n, const float *v, float *avg, int assume_centered)$/;"	f
+fmat_new_get_columns	matrix.c	/^float *fmat_new_get_columns (const float *a, int nrow, int ncolout, const int *cols) {$/;"	f
+fmat_new_get_row	matrix.c	/^float *fmat_new_get_row (const float *a, int nrow, int ncol, int row)$/;"	f
+fmat_new_get_rows	matrix.c	/^float *fmat_new_get_rows (const float *a, int d, int n,                              $/;"	f
+fmat_new_mul	matrix.c	/^float* fmat_new_mul (const float *left, const float *right, int m, int n, int k) {$/;"	f
+fmat_new_mul_full	matrix.c	/^float* fmat_new_mul_full(const float *left, const float *right,$/;"	f
+fmat_new_mul_tl	matrix.c	/^float* fmat_new_mul_tl (const float *left, const float *right, int m, int n, int k) {$/;"	f
+fmat_new_mul_tlr	matrix.c	/^float* fmat_new_mul_tlr (const float *left, const float *right, int m, int n, int k) {$/;"	f
+fmat_new_mul_tr	matrix.c	/^float* fmat_new_mul_tr (const float *left, const float *right, int m, int n, int k) {$/;"	f
+fmat_new_pca	matrix.c	/^float *fmat_new_pca(int d,int n,const float *v, float *singvals) {$/;"	f
+fmat_new_pca_from_covariance	matrix.c	/^float *fmat_new_pca_from_covariance(int d,const float *cov, float *singvals) $/;"	f
+fmat_new_pca_part	matrix.c	/^float *fmat_new_pca_part(int d,int n,int nev,$/;"	f
+fmat_new_rand_gauss	matrix.c	/^float *fmat_new_rand_gauss (int nrow, int ncol)$/;"	f
+fmat_new_sum_columns	matrix.c	/^float *fmat_new_sum_columns (const float *a, int nrow, int ncol) $/;"	f
+fmat_new_sum_rows	matrix.c	/^float *fmat_new_sum_rows (const float *a, int nrow, int ncol) $/;"	f
+fmat_new_transp	matrix.c	/^float* fmat_new_transp (const float *a, int ncol, int nrow)$/;"	f
+fmat_new_vstack	matrix.c	/^float *fmat_new_vstack(const float *a,int da,$/;"	f
+fmat_normalize_columns_l2sqr_pow	matrix.c	/^void fmat_normalize_columns_l2sqr_pow(float *a, int d, int n, float pw) {$/;"	f
+fmat_pca_from_covariance	matrix.c	/^void fmat_pca_from_covariance(int d,const float *cov, float *singvals, float * pcamat) $/;"	f
+fmat_print	matrix.c	/^void fmat_print (const float *a, int nrow, int ncol)$/;"	f
+fmat_print_tranposed	matrix.c	/^void fmat_print_tranposed(const float *a, int nrow, int ncol)$/;"	f
+fmat_remove_0_columns	matrix.c	/^int fmat_remove_0_columns(float *a, int d, int n) {$/;"	f
+fmat_rev_subtract_from_columns	matrix.c	/^void fmat_rev_subtract_from_columns(int d,int n,float *v,const float *avg) {$/;"	f
+fmat_shuffle_columns	matrix.c	/^void fmat_shuffle_columns(float *a, int nrow, int ncol) {$/;"	f
+fmat_solve_ls_t	matrix.c	/^int fmat_solve_ls_t(int m, int n, const float *a, const float *b, float *x) {$/;"	f
+fmat_solve_ls_t_inplace	matrix.c	/^static int fmat_solve_ls_t_inplace(int mi, int ni, float *a, float *bx) {$/;"	f	file:
+fmat_splat_separable	matrix.c	/^void fmat_splat_separable(const float *a,int nrow,int ncol,$/;"	f
+fmat_subtract_from_columns	matrix.c	/^void fmat_subtract_from_columns(int d,int n,float *v,const float *avg) {$/;"	f
+fmat_sum_columns	matrix.c	/^void fmat_sum_columns (const float * a, int nrow, int ncol, float * sums)$/;"	f
+fmat_sum_rows	matrix.c	/^void fmat_sum_rows (const float * a, int nrow, int ncol, float * sums)$/;"	f
+fmat_svd_partial	matrix.c	/^int fmat_svd_partial(int d,int n,int ns,const float *a,$/;"	f
+fmat_svd_partial_full	matrix.c	/^int fmat_svd_partial_full(int n,int m,int nev,const float *a,int a_transposed,$/;"	f
+fvec_0	vector.c	/^void fvec_0(float * v, long n)$/;"	f
+fvec_add	vector.c	/^void fvec_add (float * v1, const float * v2, long n)$/;"	f
+fvec_add_mul	vector.c	/^void fvec_add_mul (float * v1, const float * v2, long n,double scal) {$/;"	f
+fvec_add_scalar	vector.c	/^void fvec_add_scalar (float * v, long n, float scal) {$/;"	f
+fvec_all_0	vector.c	/^int fvec_all_0 (const float * v, long n) {$/;"	f
+fvec_all_finite	vector.c	/^int fvec_all_finite (const float * v, long n) {$/;"	f
+fvec_all_ge0	vector.c	/^int fvec_all_ge0 (const float * v, long n) {$/;"	f
+fvec_arg_max	sorting.c	/^int fvec_arg_max (const float *f, long n) $/;"	f
+fvec_arg_min	sorting.c	/^int fvec_arg_min (const float *f, long n) $/;"	f
+fvec_count_0	vector.c	/^long fvec_count_0 (const float *val, long n)$/;"	f
+fvec_count_gt	vector.c	/^long fvec_count_gt(const float * v, long n, float val) {$/;"	f
+fvec_count_inrange	vector.c	/^long fvec_count_inrange(const float * v, long n, float vmin, float vmax) {$/;"	f
+fvec_count_lt	vector.c	/^long fvec_count_lt(const float * v, long n, float val) {$/;"	f
+fvec_count_nan	vector.c	/^long fvec_count_nan (const float * v, long n)$/;"	f
+fvec_count_nonfinite	vector.c	/^long fvec_count_nonfinite (const float * v, long n)$/;"	f
+fvec_count_occurrences	vector.c	/^long fvec_count_occurrences(const float * v, long n, float val) {$/;"	f
+fvec_cpy	vector.c	/^void fvec_cpy (float * vdest, const float * vsource, long n)$/;"	f
+fvec_cpy_subvectors	vector.c	/^void fvec_cpy_subvectors (const float * v, int * idx, int d, int nout, float * vout)$/;"	f
+fvec_cumdiff	vector.c	/^void fvec_cumdiff(float *v, long n) {$/;"	f
+fvec_cumsum	vector.c	/^void fvec_cumsum(float * v, long n) {$/;"	f
+fvec_decr	vector.c	/^void fvec_decr (float * v, long n, double scal)$/;"	f
+fvec_distance_L1	vector.c	/^double fvec_distance_L1 (const float * v1, const float * v2, long n) {$/;"	f
+fvec_distance_L2	vector.c	/^double fvec_distance_L2 (const float * v1, const float * v2, long n)$/;"	f
+fvec_distance_L2sqr	vector.c	/^double fvec_distance_L2sqr (const float * v1, const float * v2, long n)$/;"	f
+fvec_div	vector.c	/^void fvec_div (float * v1, const float * v2, long n)$/;"	f
+fvec_div_by	vector.c	/^void fvec_div_by (float * v, long n, double scal)$/;"	f
+fvec_entropy	vector.c	/^double fvec_entropy (const float *pmf, int n)$/;"	f
+fvec_exp	vector.c	/^void fvec_exp (float * v, long n)$/;"	f
+fvec_find	vector.c	/^int fvec_find (const float *v, int n, int ** nzpos_out)$/;"	f
+fvec_fprintf	vector.c	/^void fvec_fprintf (FILE * f, const float *v, int n, const char *fmt)$/;"	f
+fvec_fread	vector.c	/^int fvec_fread (FILE * f, float * v, int d_alloc)$/;"	f
+fvec_fread_raw	vector.c	/^int fvec_fread_raw (FILE *f, float * v, long n) $/;"	f
+fvec_fwrite	vector.c	/^int fvec_fwrite (FILE *fo, const float *v, int d) $/;"	f
+fvec_fwrite_raw	vector.c	/^int fvec_fwrite_raw(FILE *fo, const float *v, long d) $/;"	f
+fvec_imap	vector.c	/^void fvec_imap(const float *src,const int *imap,int n,float *dest) {$/;"	f
+fvec_incr	vector.c	/^void fvec_incr (float * v, long n, double scal)$/;"	f
+fvec_index_nonfinite	vector.c	/^long fvec_index_nonfinite(float * v, long n) {$/;"	f
+fvec_inner_product	vector.c	/^double fvec_inner_product (const float * v1, const float * v2, long n)$/;"	f
+fvec_isplat_add	vector.c	/^void fvec_isplat_add(const float *a,int n,$/;"	f
+fvec_k_max	sorting.c	/^void fvec_k_max (const float *val, int n, int *idx, int k)$/;"	f
+fvec_k_max_hoare	sorting.c	/^static void fvec_k_max_hoare (const float *val, int n, int *idx, int k)$/;"	f	file:
+fvec_k_max_maxheap	sorting.c	/^static void fvec_k_max_maxheap (const float *val, int n,$/;"	f	file:
+fvec_k_min	sorting.c	/^void fvec_k_min (const float *val, int n, int *idx, int k)$/;"	f
+fvec_k_min_hoare	sorting.c	/^static void fvec_k_min_hoare (const float *val, int n, int *idx, int k)$/;"	f	file:
+fvec_k_min_maxheap	sorting.c	/^static void fvec_k_min_maxheap (const float *val, int n,$/;"	f	file:
+fvec_log	vector.c	/^void fvec_log (float * v, long n)$/;"	f
+fvec_map	vector.c	/^void fvec_map(const float *src,const int *map,int n,float *dest) {$/;"	f
+fvec_max	sorting.c	/^float fvec_max (const float *f, long n) $/;"	f
+fvec_mean	vector.c	/^double fvec_mean (const float * v, long n)$/;"	f
+fvec_median	sorting.c	/^float fvec_median (float *f, int n)$/;"	f
+fvec_median_const	sorting.c	/^float fvec_median_const (const float *f, int n) $/;"	f
+fvec_min	sorting.c	/^float fvec_min (const float *f, long n) $/;"	f
+fvec_mul	vector.c	/^void fvec_mul (float * v1, const float * v2, long n)$/;"	f
+fvec_mul_by	vector.c	/^void fvec_mul_by (float * v, long n, double scal)$/;"	f
+fvec_nan	vector.c	/^void fvec_nan (float * v, long n) {$/;"	f
+fvec_neg	vector.c	/^void fvec_neg (float * v, long n) {$/;"	f
+fvec_new	vector.c	/^float *fvec_new (long n)$/;"	f
+fvec_new_0	vector.c	/^float *fvec_new_0 (long n)$/;"	f
+fvec_new_cpy	vector.c	/^float * fvec_new_cpy (const float * v, long n) {$/;"	f
+fvec_new_fread_raw	vector.c	/^float * fvec_new_fread_raw(FILE * f, long d) $/;"	f
+fvec_new_histogram_clip	vector.c	/^int * fvec_new_histogram_clip (float vmin,float vmax, int k, float *v, long n) {$/;"	f
+fvec_new_nan	vector.c	/^float *fvec_new_nan (long n)$/;"	f
+fvec_new_rand	vector.c	/^float *fvec_new_rand (long n) $/;"	f
+fvec_new_rand_r	vector.c	/^float * fvec_new_rand_r (long n, unsigned int seed)$/;"	f
+fvec_new_randn	vector.c	/^float * fvec_new_randn (long n)$/;"	f
+fvec_new_randn_r	vector.c	/^float * fvec_new_randn_r (long n, unsigned int seed)$/;"	f
+fvec_new_read_raw	vector.c	/^float * fvec_new_read_raw(const char * fname, long d) $/;"	f
+fvec_new_set	vector.c	/^float *fvec_new_set (long n, float val)$/;"	f
+fvec_norm	vector.c	/^double fvec_norm (const float * v, long n, double norm)$/;"	f
+fvec_norm2sqr	vector.c	/^double fvec_norm2sqr (const float * v, long n) {$/;"	f
+fvec_normalize	vector.c	/^double fvec_normalize (float * v, long n, double norm)$/;"	f
+fvec_normalize_2stage	vector.c	/^void fvec_normalize_2stage(float * v, long n, double scal) {$/;"	f
+fvec_nz	vector.c	/^long fvec_nz (const float * v, long n)$/;"	f
+fvec_print	vector.c	/^void fvec_print (const float * v, int n)$/;"	f
+fvec_product	vector.c	/^double fvec_product (const float * v, long n) {$/;"	f
+fvec_purge_nans	vector.c	/^int fvec_purge_nans(float * v, long n, float replace_value) {$/;"	f
+fvec_purge_nonfinite	vector.c	/^int fvec_purge_nonfinite(float * v, long n, float replace_value) {$/;"	f
+fvec_quantile	sorting.c	/^float fvec_quantile (float *f, int n, int q)$/;"	f
+fvec_rand	vector.c	/^void fvec_rand (float * v, long n)$/;"	f
+fvec_rand_r	vector.c	/^void fvec_rand_r (float * v, long n, unsigned int seed)$/;"	f
+fvec_randn	vector.c	/^void fvec_randn (float * v, long n)$/;"	f
+fvec_randn_r	vector.c	/^void fvec_randn_r (float * v, long n, unsigned int seed)$/;"	f
+fvec_ranks_inc_of	sorting.c	/^void fvec_ranks_inc_of (const float *tab, int n,$/;"	f
+fvec_ranks_of	sorting.c	/^void fvec_ranks_of (const float *tab, int n,$/;"	f
+fvec_rdiv_by	vector.c	/^void fvec_rdiv_by (float * v, long n, double scal) {$/;"	f
+fvec_read	vector.c	/^int fvec_read (const char *fname, int d, float *a, int o_f) {$/;"	f
+fvec_resize	vector.c	/^float * fvec_resize (float * v, long n)$/;"	f
+fvec_rev_sub	vector.c	/^void fvec_rev_sub (float * v1, const float * v2, long n) {$/;"	f
+fvec_round	vector.c	/^void fvec_round (float * v, long n)$/;"	f
+fvec_set	vector.c	/^void fvec_set (float * v, long n, float val)$/;"	f
+fvec_shrink_nonfinite	vector.c	/^long fvec_shrink_nonfinite(float * v, long n) {$/;"	f
+fvec_sort	sorting.c	/^void fvec_sort(float *tab, int n) $/;"	f
+fvec_sort_by_permutation	sorting.c	/^void fvec_sort_by_permutation (float * v, const int * order, int n)$/;"	f
+fvec_sort_index	sorting.c	/^void fvec_sort_index(const float *tab,int n,int *perm) {$/;"	f
+fvec_splat_add	vector.c	/^void fvec_splat_add(const float *a,int n,$/;"	f
+fvec_spow	vector.c	/^void fvec_spow (float * v, long n, double scal) {$/;"	f
+fvec_sqr	vector.c	/^void fvec_sqr (float * v, long n)$/;"	f
+fvec_sqrt	vector.c	/^void fvec_sqrt (float * v, long n)$/;"	f
+fvec_ssqrt	vector.c	/^void fvec_ssqrt (float * v, long n) {$/;"	f
+fvec_sub	vector.c	/^void fvec_sub (float * v1, const float * v2, long n)$/;"	f
+fvec_sum	vector.c	/^double fvec_sum (const float * v, long n)$/;"	f
+fvec_sum_sqr	vector.c	/^double fvec_sum_sqr (const float * v, long n)$/;"	f
+fvec_to_spfvec	vector.c	/^int fvec_to_spfvec (float * v, int n, int ** idx_out, float ** v_out)$/;"	f
+fvec_write_raw	vector.c	/^int fvec_write_raw (const char *fname, const float *v, long d)$/;"	f
+fvecs_fread	vector.c	/^long fvecs_fread (FILE * f, float * v, long n, int d_alloc)$/;"	f
+fvecs_fsize	vector.c	/^long fvecs_fsize (const char * fname, int *d_out, int *n_out) {$/;"	f
+fvecs_fsize	ynumpy.py	/^def fvecs_fsize(filename): $/;"	f
+fvecs_fwrite	vector.c	/^int fvecs_fwrite (FILE *fo, int d, int n, const float *vf)$/;"	f
+fvecs_new_fread_max	vector.c	/^int fvecs_new_fread_max (FILE *f, int *d_out, float **vf_out, long nmax)$/;"	f
+fvecs_new_mmap	vector.c	/^int fvecs_new_mmap (const char *fname, int *d_out, float **vf) {$/;"	f
+fvecs_new_read	vector.c	/^int fvecs_new_read (const char *fname, int *d_out, float **vf_out)$/;"	f
+fvecs_new_read_sparse	vector.c	/^int fvecs_new_read_sparse (const char *fname, int d, float **vf_out) {$/;"	f
+fvecs_normalize	vector.c	/^int fvecs_normalize (float * v, long n, long d, double norm)$/;"	f
+fvecs_read	vector.c	/^int fvecs_read (const char *fname, int d, int n, float *a)$/;"	f
+fvecs_read	ynumpy.py	/^def fvecs_read(filename, nmax = -1):$/;"	f
+fvecs_read_txt	vector.c	/^int fvecs_read_txt (const char *fname, int d, int n, float *v)$/;"	f
+fvecs_sort	sorting.c	/^void fvecs_sort (float * v, int d, int n)$/;"	f
+fvecs_write	vector.c	/^int fvecs_write (const char *fname, int d, int n, const float *vf)$/;"	f
+fvecs_write	ynumpy.py	/^def fvecs_write(filename, matrix): $/;"	f
+fvecs_write_txt	vector.c	/^int fvecs_write_txt (const char * fname, int d, int n, const float *vf)$/;"	f
+fvectodvec	vector.c	/^void fvectodvec (const float *a, double *b, long n) {$/;"	f
+g	gmm.c	/^  const gmm_t * g;$/;"	m	struct:__anon1	file:
+gaussian_kernel	spectral_clustering.c	/^void gaussian_kernel (int d, int n1, int n2, $/;"	f
+gaussrand	vector.c	/^double gaussrand () {$/;"	f
+gaussrand_r	vector.c	/^static double gaussrand_r (unsigned int *seed)$/;"	f	file:
+geigs_sym	eigs.c	/^int geigs_sym (int di, const float * a, const float * b, float * eigval, float * eigvec)$/;"	f
+get	threads.py	/^  def get(self):$/;"	m	class:WritePriorityLock
+get_as_dict	threads.py	/^  def get_as_dict(self):$/;"	m	class:ThreadsafeState
+get_maxincell	kmlsh.c	/^static inline int get_maxincell (const int * boundaries, int nclust)$/;"	f	file:
+get_one	threads.py	/^  def get_one(self):$/;"	m	class:Pool
+get_w	threads.py	/^  def get_w(self):$/;"	m	class:WritePriorityLock
+getmillisecs	machinedeps.c	/^double getmillisecs() $/;"	f
+gmm_compute_p	gmm.c	/^void gmm_compute_p (int n, const float * v, $/;"	f
+gmm_compute_p_thread	gmm.c	/^void gmm_compute_p_thread (int n, const float * v, $/;"	f
+gmm_compute_params	gmm.c	/^static void gmm_compute_params (int n, const float * v, const float * p, $/;"	f	file:
+gmm_delete	gmm.c	/^void gmm_delete (gmm_t * g)$/;"	f
+gmm_fisher	gmm.c	/^void gmm_fisher(int n, const float *v, const gmm_t * g, int flags, float *dp_dlambda) {$/;"	f
+gmm_fisher_sizeof	gmm.c	/^size_t gmm_fisher_sizeof(const gmm_t * g,int flags) {$/;"	f
+gmm_handle_empty	gmm.c	/^void gmm_handle_empty(int n, const float *v, gmm_t *g, float *p) {$/;"	f
+gmm_learn	gmm.c	/^gmm_t * gmm_learn (int di, int ni, int ki, int niter, $/;"	f
+gmm_learn	ynumpy.py	/^def gmm_learn(v, k,$/;"	f
+gmm_new	gmm.c	/^static gmm_t * gmm_new (int d, int k)$/;"	f	file:
+gmm_print	gmm.c	/^void gmm_print(const gmm_t *g) {$/;"	f
+gmm_read	gmm.c	/^gmm_t * gmm_read(FILE *f) {$/;"	f
+gmm_read	ynumpy.py	/^def gmm_read(filename):$/;"	f
+gmm_s	gmm.h	/^typedef struct gmm_s {$/;"	s
+gmm_t	gmm.h	/^} gmm_t;$/;"	t	typeref:struct:gmm_s
+gmm_write	gmm.c	/^void gmm_write(const gmm_t *g, FILE *f) {$/;"	f
+hadamard	matrix.c	/^float *hadamard (int d)$/;"	f
+handle_stackframe_without_leak	threads.py	/^def handle_stackframe_without_leak():$/;"	f
+hkm_delete	hkm.c	/^void hkm_delete (hkm_t * hkm)$/;"	f
+hkm_get_centroids	hkm.c	/^float * hkm_get_centroids (const hkm_t * hkm, int l, int no)$/;"	f
+hkm_learn	hkm.c	/^hkm_t *hkm_learn (int n, int d, int nlevel, int bf,$/;"	f
+hkm_new	hkm.c	/^hkm_t * hkm_new (int d, int nlevel, int bf)$/;"	f
+hkm_quantize	hkm.c	/^void hkm_quantize (const hkm_t * hkm, int npt, const float * v, int * idx)$/;"	f
+hkm_read	hkm.c	/^hkm_t *hkm_read (const char *filename)$/;"	f
+hkm_s	hkm.h	/^typedef struct hkm_s {$/;"	s
+hkm_t	hkm.h	/^} hkm_t;$/;"	t	typeref:struct:hkm_s
+hkm_write	hkm.c	/^void hkm_write (const char *filename, const hkm_t * hkm)$/;"	f
+hoare_select_f	sorting.c	/^static void hoare_select_f (float *f, int i0, int i1, int q)$/;"	f	file:
+hoare_selectp	sorting.c	/^static void hoare_selectp (const float **perm, int i0, int i1, int q)$/;"	f	file:
+id	threads.py	/^  id=0$/;"	v	class:VerbLock
+ido	eigs.c	/^  FINTEGER ido,info;$/;"	m	struct:arpack_eigs_t	file:
+idx	kmlsh.h	/^  int * idx;     \/* indices of the NN *\/$/;"	m	struct:nnlist_s
+imat_get_submatrix	matrix.c	/^int *imat_get_submatrix (const int *a, int nrow, $/;"	f
+imat_joint_histogram	matrix.c	/^int *imat_joint_histogram(int n,int k,int *row_assign,int *col_assign) {$/;"	f
+info	eigs.c	/^  FINTEGER ido,info;$/;"	m	struct:arpack_eigs_t	file:
+inspect	threads.py	/^import sys,time,inspect,thread,threading,os,errno,types,traceback$/;"	i
+integer	eigs.c	/^typedef FINTEGER integer;$/;"	t	file:
+integer	gmm.c	107;"	d	file:
+integer	gmm.c	94;"	d	file:
+integer	matrix.c	60;"	d	file:
+integer	matrix.c	99;"	d	file:
+integer	nn.c	66;"	d	file:
+integer	nn.c	79;"	d	file:
+iparam	eigs.c	/^  FINTEGER *iparam,*ipntr;$/;"	m	struct:arpack_eigs_t	file:
+ipntr	eigs.c	/^  FINTEGER *iparam,*ipntr;$/;"	m	struct:arpack_eigs_t	file:
+ivec2fvec	vector.c	/^float * ivec2fvec (const int * v, long n)$/;"	f
+ivec_0	vector.c	/^void ivec_0(int * v, long n)$/;"	f
+ivec_accumulate_slices	vector.c	/^void ivec_accumulate_slices(const int *v,int *sl,int n) {$/;"	f
+ivec_add	vector.c	/^void ivec_add (int * v1, const int * v2, long n) {$/;"	f
+ivec_add_scalar	vector.c	/^void ivec_add_scalar (int * v, long n, int scal) {$/;"	f
+ivec_all_0	vector.c	/^int ivec_all_0 (const int * v, long n) {$/;"	f
+ivec_all_ge0	vector.c	/^int ivec_all_ge0 (const int * v, long n) {$/;"	f
+ivec_count_gt	vector.c	/^long ivec_count_gt(const int * v, long n, int val) {$/;"	f
+ivec_count_inrange	vector.c	/^long ivec_count_inrange(const int * v, long n, int vmin, int vmax) {$/;"	f
+ivec_count_lt	vector.c	/^long ivec_count_lt(const int * v, long n, int val) {$/;"	f
+ivec_count_occurrences	vector.c	/^long ivec_count_occurrences(const int * v, long n, int val) {$/;"	f
+ivec_cpy	vector.c	/^void ivec_cpy (int * vdest, const int * vsource, long n)$/;"	f
+ivec_cumdiff	vector.c	/^void ivec_cumdiff(int *v, long n) {$/;"	f
+ivec_cumsum	vector.c	/^void ivec_cumsum(int *v, long n) {$/;"	f
+ivec_decr	vector.c	/^void ivec_decr (int * v, long n, int scal) {$/;"	f
+ivec_distance_hamming	vector.c	/^long ivec_distance_hamming (const int * v1, const int * v2, long n)$/;"	f
+ivec_find	vector.c	/^int ivec_find (const int *v, int n, int ** nzpos_out)$/;"	f
+ivec_fprintf	vector.c	/^void ivec_fprintf (FILE * f, const int *v, int n, const char *fmt)$/;"	f
+ivec_fread	vector.c	/^int ivec_fread (FILE * f, int * v, int d_alloc)$/;"	f
+ivec_fread_raw	vector.c	/^int ivec_fread_raw (FILE *f, int * v, long n) $/;"	f
+ivec_fwrite	vector.c	/^int ivec_fwrite (FILE *f, const int *v, int d)$/;"	f
+ivec_fwrite_raw	vector.c	/^int ivec_fwrite_raw(FILE *fo, const int *v, long d) $/;"	f
+ivec_hash	vector.c	/^int ivec_hash(const int * v, long n) {$/;"	f
+ivec_incr	vector.c	/^void ivec_incr (int * v, long n, int scal) {$/;"	f
+ivec_index	vector.c	/^long ivec_index(const int * v, long n,int val) {$/;"	f
+ivec_invert_perm	sorting.c	/^void ivec_invert_perm (const int *perm, int n, int *iperm) $/;"	f
+ivec_map	vector.c	/^void ivec_map (const int *src,const int *map,int n,int *dest) {$/;"	f
+ivec_max	sorting.c	/^int ivec_max (const int *f, long n) $/;"	f
+ivec_mean	vector.c	/^long long ivec_mean (const int * v, long n)$/;"	f
+ivec_min	sorting.c	/^int ivec_min (const int *f, long n) $/;"	f
+ivec_mod_by	vector.c	/^void ivec_mod_by (int * v,long n, int scal) {$/;"	f
+ivec_mul_by	vector.c	/^void ivec_mul_by (int * v,long n, int scal) {$/;"	f
+ivec_new	vector.c	/^ int *ivec_new (long n)$/;"	f
+ivec_new_0	vector.c	/^int *ivec_new_0 (long n)$/;"	f
+ivec_new_cpy	vector.c	/^int * ivec_new_cpy (const int * v, long n)$/;"	f
+ivec_new_fread_raw	vector.c	/^int * ivec_new_fread_raw(FILE * f, long d) $/;"	f
+ivec_new_histogram	vector.c	/^int *ivec_new_histogram (int k, const int *v, long n)$/;"	f
+ivec_new_histogram_clip	vector.c	/^int * ivec_new_histogram_clip (int k, int * v, long n) {$/;"	f
+ivec_new_random_idx	vector.c	/^int * ivec_new_random_idx (int n, int k)$/;"	f
+ivec_new_random_idx_r	vector.c	/^int * ivec_new_random_idx_r (int n, int k, unsigned int seed)$/;"	f
+ivec_new_random_perm	vector.c	/^int *ivec_new_random_perm (int n)$/;"	f
+ivec_new_random_perm_r	vector.c	/^int *ivec_new_random_perm_r (int n, unsigned int seed)$/;"	f
+ivec_new_range	vector.c	/^int * ivec_new_range (long a, long b)$/;"	f
+ivec_new_read	vector.c	/^int *ivec_new_read(const char *fname, int *d_out) {$/;"	f
+ivec_new_read_raw	vector.c	/^int * ivec_new_read_raw(const char * fname, long d) $/;"	f
+ivec_new_set	vector.c	/^int *ivec_new_set (long n, int val)$/;"	f
+ivec_nz	vector.c	/^long ivec_nz (const int * v, long n)$/;"	f
+ivec_print	vector.c	/^void ivec_print (const int * v, int n)$/;"	f
+ivec_product	vector.c	/^long long ivec_product (const int * v, long n) {$/;"	f
+ivec_repeat_with_inc	vector.c	/^int *ivec_repeat_with_inc(const int *a,int n,$/;"	f
+ivec_replace	vector.c	/^void ivec_replace(int * v, long n,int val,int replace_val) {$/;"	f
+ivec_resize	vector.c	/^int * ivec_resize (int * v, long n)$/;"	f
+ivec_set	vector.c	/^void ivec_set (int * v, long n, int val)$/;"	f
+ivec_shuffle	vector.c	/^void ivec_shuffle (int * v, long n)$/;"	f
+ivec_sort	sorting.c	/^void ivec_sort(int *tab, int n) $/;"	f
+ivec_sort_by_permutation	sorting.c	/^void ivec_sort_by_permutation (int * v, const int * order, int n)$/;"	f
+ivec_sort_index	sorting.c	/^void ivec_sort_index (const int *tab, int n, int *perm) $/;"	f
+ivec_sorted_count_occurrences	sorting.c	/^int ivec_sorted_count_occurrences (const int *v, int n, int val) $/;"	f
+ivec_sorted_count_occurrences_multiple	sorting.c	/^int ivec_sorted_count_occurrences_multiple(const int *v,int n,$/;"	f
+ivec_sorted_count_unique	sorting.c	/^int ivec_sorted_count_unique (const int *v, int n) $/;"	f
+ivec_sorted_find	sorting.c	/^int ivec_sorted_find (const int *v,int n,int val) $/;"	f
+ivec_sub	vector.c	/^void ivec_sub (int * v1, const int * v2, long n){$/;"	f
+ivec_sum	vector.c	/^long long ivec_sum (const int * v, long n)$/;"	f
+ivec_sum_sqr	vector.c	/^long long ivec_sum_sqr (const int * v, long n)$/;"	f
+ivec_to_fvec	vector.c	/^void ivec_to_fvec(const int *v, float *f, long n) {$/;"	f
+ivec_to_spivec	vector.c	/^int ivec_to_spivec (int * v, int n, int ** idx_out, int ** v_out)$/;"	f
+ivec_unbalanced_factor	vector.c	/^double ivec_unbalanced_factor(const int *hist, long n) {$/;"	f
+ivec_write_raw	vector.c	/^int ivec_write_raw (const char *fname, const int *v, long d)$/;"	f
+ivecs_fread	vector.c	/^long ivecs_fread (FILE * f, int * v, long n, int d_alloc)$/;"	f
+ivecs_fsize	vector.c	/^long ivecs_fsize (const char * fname, int *d_out, int *n_out)$/;"	f
+ivecs_fwrite	vector.c	/^int ivecs_fwrite(FILE *f, int d, int n, const int *v)$/;"	f
+ivecs_new_fread_max	vector.c	/^int ivecs_new_fread_max (FILE *f, int *d_out, int **vi_out, long nmax)$/;"	f
+ivecs_new_mmap	vector.c	/^int ivecs_new_mmap (const char *fname, int *d_out, int **vf) {$/;"	f
+ivecs_new_read	vector.c	/^int ivecs_new_read (const char *fname, int *d_out, int **vi_out)$/;"	f
+ivecs_read	ynumpy.py	/^def ivecs_read(filename):$/;"	f
+ivecs_write	vector.c	/^int ivecs_write (const char *fname, int d, int n, const int *v)$/;"	f
+ivecs_write	ynumpy.py	/^def ivecs_write(filename, matrix): $/;"	f
+ivecs_write_txt	vector.c	/^int ivecs_write_txt (const char * fname, int d, int n, const int *v)$/;"	f
+k	binheap.h	/^  int k;           \/*!< number of elements stored  *\/$/;"	m	struct:fbinheap_s
+k	gmm.c	/^  long n,k,d;$/;"	m	struct:__anon2	file:
+k	gmm.h	/^  int k;          \/*!< number of mixtures *\/$/;"	m	struct:gmm_s
+k	hkm.h	/^  int k;                 \/* the number of leaves (bf^nlevel) *\/$/;"	m	struct:hkm_s
+k	kmlsh.h	/^  long k;        \/* number of nearest neighbors *\/$/;"	m	struct:nnlist_s
+k	nn.c	/^  int nclust, d, k;$/;"	m	struct:__anon3	file:
+kmeans	kmeans.c	/^float kmeans (int di, int n, int k, int niter, $/;"	f
+kmeans	ynumpy.py	/^def kmeans(v, k,$/;"	f
+kmeans_cohash_bvec	kmlsh.c	/^void kmeans_cohash_bvec (const kmlsh_t * lsh, int h, const unsigned char * v, int n, $/;"	f
+kmeans_cohash_fvec	kmlsh.c	/^void kmeans_cohash_fvec (const kmlsh_t * lsh, int h, const float * v, int n, $/;"	f
+kmeans_cohash_xvec	kmlsh.c	/^void kmeans_cohash_xvec (const kmlsh_t * lsh, int h, const void * v, int n, $/;"	f
+kmeans_core	kmeans.c	/^static int kmeans_core (int d, int n, int k, int niter, int nt, int flags, int verbose, $/;"	f	file:
+kmeans_reassign_empty	kmeans.c	/^static int kmeans_reassign_empty (int d, int n, int k, float * centroids,$/;"	f	file:
+kmeanspp_init	kmeans.c	/^static void kmeanspp_init (long d, int n, int k, const float * v, $/;"	f	file:
+kmlsh_ann_bvec	kmlsh.c	/^nnlist_t * kmlsh_ann_bvec (const unsigned char * vb, int nb,$/;"	f
+kmlsh_ann_fvec	kmlsh.c	/^nnlist_t * kmlsh_ann_fvec (const float * vb, int nb,$/;"	f
+kmlsh_ann_xvec	kmlsh.c	/^nnlist_t * kmlsh_ann_xvec (const void * vb, int nb,$/;"	f
+kmlsh_delete	kmlsh.c	/^void kmlsh_delete (kmlsh_t * lsh)$/;"	f
+kmlsh_idx_delete	kmlsh.c	/^void kmlsh_idx_delete (kmlsh_idx_t * lshidx)$/;"	f
+kmlsh_idx_get_maxincell	kmlsh.c	/^int kmlsh_idx_get_maxincell (const kmlsh_idx_t * lshidx, int h)$/;"	f
+kmlsh_idx_get_nvec	kmlsh.c	/^int kmlsh_idx_get_nvec (const kmlsh_idx_t * lshidx, int h, int c)$/;"	f
+kmlsh_idx_get_vecids	kmlsh.c	/^int * kmlsh_idx_get_vecids (const kmlsh_idx_t * lshidx, int h, int c)$/;"	f
+kmlsh_idx_new	kmlsh.c	/^kmlsh_idx_t * kmlsh_idx_new (const kmlsh_t * lsh, int n)$/;"	f
+kmlsh_idx_new_compile_bvec	kmlsh.c	/^kmlsh_idx_t * kmlsh_idx_new_compile_bvec (const kmlsh_t * lsh, const unsigned char * v, int n, int flags)$/;"	f
+kmlsh_idx_new_compile_fvec	kmlsh.c	/^kmlsh_idx_t * kmlsh_idx_new_compile_fvec (const kmlsh_t * lsh, const float * v, int n, int flags)$/;"	f
+kmlsh_idx_new_compile_xvec	kmlsh.c	/^kmlsh_idx_t * kmlsh_idx_new_compile_xvec (const kmlsh_t * lsh, const void * v, int n, int flags, int vec_type)$/;"	f
+kmlsh_idx_read	kmlsh.c	/^void kmlsh_idx_read (const char * filename, kmlsh_idx_t * lshidx)$/;"	f
+kmlsh_idx_s	kmlsh.h	/^struct kmlsh_idx_s {$/;"	s
+kmlsh_idx_t	kmlsh.h	/^typedef struct kmlsh_idx_s kmlsh_idx_t;$/;"	t	typeref:struct:kmlsh_idx_s
+kmlsh_idx_write	kmlsh.c	/^void kmlsh_idx_write (const char * filename, const kmlsh_idx_t * lshidx)$/;"	f
+kmlsh_learn_xvec	kmlsh.c	/^void kmlsh_learn_xvec (kmlsh_t * lsh, int n, int nlearn, const void * v, $/;"	f
+kmlsh_match_bvec	kmlsh.c	/^nnlist_t * kmlsh_match_bvec (const kmlsh_t * lsh,$/;"	f
+kmlsh_match_fvec	kmlsh.c	/^nnlist_t * kmlsh_match_fvec (const kmlsh_t * lsh,$/;"	f
+kmlsh_match_xvec	kmlsh.c	/^nnlist_t * kmlsh_match_xvec (const kmlsh_t * lsh,$/;"	f
+kmlsh_new	kmlsh.c	/^kmlsh_t * kmlsh_new (int nhash, int nclust, int d)$/;"	f
+kmlsh_new_learn_bvec	kmlsh.c	/^kmlsh_t * kmlsh_new_learn_bvec (int nhash, int nclust, int d, int n, int nlearn, $/;"	f
+kmlsh_new_learn_fvec	kmlsh.c	/^kmlsh_t * kmlsh_new_learn_fvec (int nhash, int nclust, int d, int n, int nlearn, $/;"	f
+kmlsh_read	kmlsh.c	/^void kmlsh_read (const char * filename, const kmlsh_t * lsh)$/;"	f
+kmlsh_s	kmlsh.h	/^struct kmlsh_s {$/;"	s
+kmlsh_t	kmlsh.h	/^typedef struct kmlsh_s kmlsh_t;$/;"	t	typeref:struct:kmlsh_s
+kmlsh_write	kmlsh.c	/^void kmlsh_write (const char * filename, const kmlsh_t * lsh)$/;"	f
+knn	nn.c	/^float *knn (int npt, int nclust, int d, int k,$/;"	f
+knn	ynumpy.py	/^def knn(queries, base, $/;"	f
+knn_full	nn.c	/^void knn_full (int distance_type,int n1, int n2, int d, int k,$/;"	f
+knn_full_thread	nn.c	/^void knn_full_thread (int distance_type, int npt, int nclust, int d, int k,$/;"	f
+knn_recompute_exact_dists	nn.c	/^void knn_recompute_exact_dists(int nq, int nb, int d, int k,$/;"	f
+knn_reorder_shortlist	nn.c	/^void knn_reorder_shortlist(int n, int nb, int d, int k,$/;"	f
+knn_thread	nn.c	/^float *knn_thread (int npt, int nclust, int d, int k,$/;"	f
+label	binheap.h	/^  int * label;     \/*!< idem for labels *\/$/;"	m	struct:fbinheap_s
+load_vectors_fmt	yutils.py	/^def load_vectors_fmt(fname,fmt,d,nuse=None,off=0,verbose=True):$/;"	f
+log2	machinedeps.c	/^double log2(double x) {$/;"	f
+logical	eigs.c	/^typedef FINTEGER logical;$/;"	t	file:
+loop	threads.py	/^  def loop(self):$/;"	m	class:PCIter
+loop	threads.py	/^  def loop(self):$/;"	m	class:ParallelIter
+loop	threads.py	/^  def loop(self):$/;"	m	class:RunOnSet
+lvec_fread	vector.c	/^int lvec_fread (FILE * f, long long * v, int d_alloc)$/;"	f
+lvec_new	vector.c	/^long long * lvec_new (long n)$/;"	f
+lvec_new_0	vector.c	/^long long *lvec_new_0 (long n)$/;"	f
+lvec_print	vector.c	/^void lvec_print (const long long * v, int n)$/;"	f
+lvecs_fread	vector.c	/^long lvecs_fread (FILE * f, long long * v, long n, int d_alloc)$/;"	f
+lvecs_fsize	vector.c	/^long lvecs_fsize (const char * fname, int *d_out, int *n_out)$/;"	f
+lvecs_new_read	vector.c	/^int lvecs_new_read (const char *fname, int *d_out, long long **v_out) {$/;"	f
+lworkl	eigs.c	/^  FINTEGER lworkl;$/;"	m	struct:arpack_eigs_t	file:
+make_stops	sorting.c	/^static stop_t *make_stops (const float *tab, int n,$/;"	f	file:
+malloc_stats_begin	machinedeps.c	/^void malloc_stats_begin() {$/;"	f
+malloc_stats_end	machinedeps.c	/^malloc_stats_t malloc_stats_end() {$/;"	f
+malloc_stats_t	machinedeps.h	/^} malloc_stats_t;$/;"	t	typeref:struct:__anon7
+mat_product	nn.c	/^static void mat_product(FINTEGER d, FINTEGER na, FINTEGER nb,$/;"	f	file:
+max_alloc	machinedeps.h	/^  size_t max_alloc;             \/* max of delta_alloc during the tracing *\/$/;"	m	struct:__anon7
+maxk	binheap.h	/^  int maxk;        \/*!< maximum number of elements *\/$/;"	m	struct:fbinheap_s
+memalign	machinedeps.c	/^void *memalign (size_t ignored, size_t nbytes)$/;"	f
+memalign	vector.c	/^static void *memalign(size_t ignored,size_t nbytes) {$/;"	f	file:
+merge_ordered_sets	sorting.c	/^int merge_ordered_sets (const int **labels,const float **vals,$/;"	f
+min_sigma	gmm.c	/^static float min_sigma=1e-10;$/;"	v	file:
+minimize_sum_chi2	kmeans.c	/^float minimize_sum_chi2(const float *a, int n) {$/;"	f
+msc	machinedeps.c	/^} msc={0};$/;"	v	typeref:struct:__anon6	file:
+mu	gmm.c	/^  float *mu,*sigma,*w;$/;"	m	struct:__anon2	file:
+mu	gmm.h	/^  float * mu;     \/*!< centroids (d-by-k) *\/$/;"	m	struct:gmm_s
+mu	matrix.h	/^  float * mu;$/;"	m	struct:pca_online_s
+mu_old	gmm.c	/^  const float *v,*mu_old,*p;$/;"	m	struct:__anon2	file:
+n	eigs.c	/^  FINTEGER n,nev;$/;"	m	struct:arpack_eigs_t	file:
+n	gmm.c	/^  long n,k,d;$/;"	m	struct:__anon2	file:
+n	gmm.c	/^  long n;$/;"	m	struct:__anon1	file:
+n	kmlsh.h	/^  int n;               \/* number of vectors stored *\/$/;"	m	struct:kmlsh_idx_s
+n	kmlsh.h	/^  long n;        \/* number of points *\/$/;"	m	struct:nnlist_s
+n	machinedeps.c	/^  int n,na;  $/;"	m	struct:__anon6	file:
+n	matrix.h	/^  int n;            \/* number of samples used for the pca. A negative values means that $/;"	m	struct:pca_online_s
+n_alloc	machinedeps.h	/^  int n_alloc,n_free,n_realloc; \/* nb of operations of each type *\/$/;"	m	struct:__anon7
+n_eq	sorting.c	/^  int n_eq;                     \/* nb of values equal to val *\/$/;"	m	struct:__anon8	file:
+n_free	machinedeps.h	/^  int n_alloc,n_free,n_realloc; \/* nb of operations of each type *\/$/;"	m	struct:__anon7
+n_gt	sorting.c	/^  int n_gt;                     \/* nb of values greater than val *\/$/;"	m	struct:__anon8	file:
+n_realloc	machinedeps.h	/^  int n_alloc,n_free,n_realloc; \/* nb of operations of each type *\/$/;"	m	struct:__anon7
+n_thread	gmm.c	/^  int n_thread;   $/;"	m	struct:__anon1	file:
+n_thread	gmm.c	/^  int n_thread;$/;"	m	struct:__anon2	file:
+n_thread	nn.c	/^  int n_thread;$/;"	m	struct:__anon3	file:
+n_untracked_frees	machinedeps.h	/^  int n_untracked_frees;        \/* nb of frees of objects that were not allocated during the tracing $/;"	m	struct:__anon7
+na	machinedeps.c	/^  int n,na;  $/;"	m	struct:__anon6	file:
+na	nn.c	/^  int d, na, nb;$/;"	m	struct:__anon4	file:
+nb	nn.c	/^  int d, na, nb;$/;"	m	struct:__anon4	file:
+nclust	kmlsh.h	/^  int nclust;          \/* number of cluster per cell *\/$/;"	m	struct:kmlsh_s
+nclust	kmlsh.h	/^  int nclust; $/;"	m	struct:kmlsh_idx_s
+nclust	nn.c	/^  int nclust, d, k;$/;"	m	struct:__anon3	file:
+ncv	eigs.c	/^  FINTEGER ncv;$/;"	m	struct:arpack_eigs_t	file:
+nev	eigs.c	/^  FINTEGER n,nev;$/;"	m	struct:arpack_eigs_t	file:
+next	threads.py	/^  def next(self):$/;"	m	class:PCIter
+next	threads.py	/^  def next(self):$/;"	m	class:ParallelIter
+next	threads.py	/^  def next(self,name,**kwargs):$/;"	m	class:DummyState
+next	threads.py	/^  def next(self,name,**kwargs):$/;"	m	class:ThreadsafeState
+nhash	kmlsh.h	/^  int nhash;           \/* number of hash functions *\/$/;"	m	struct:kmlsh_s
+nhash	kmlsh.h	/^  int nhash;$/;"	m	struct:kmlsh_idx_s
+nlevel	hkm.h	/^  int nlevel;            \/* number of levels *\/$/;"	m	struct:hkm_s
+nn	nn.c	/^double nn (int npt, int nclust, int d,$/;"	f
+nn_input_t	nn.c	/^} nn_input_t;$/;"	t	typeref:struct:__anon3	file:
+nn_single_full	nn.c	/^static void nn_single_full (int distance_type,$/;"	f	file:
+nn_task	nn.c	/^static void nn_task (void *arg, int tid, int i)$/;"	f	file:
+nn_thread	nn.c	/^double nn_thread (int npt, int nclust, int d,$/;"	f
+nnlist_add	kmlsh.c	/^static inline void nnlist_add (nnlist_t * l, int lno, int elidx, float eldis)$/;"	f	file:
+nnlist_addn	kmlsh.c	/^void nnlist_addn (nnlist_t * l, int lno, int n, int * idx, float * dis)$/;"	f
+nnlist_delete	kmlsh.c	/^void nnlist_delete (nnlist_t * l)$/;"	f
+nnlist_new	kmlsh.c	/^nnlist_t * nnlist_new (int n, int k)$/;"	f
+nnlist_new_noalloc	kmlsh.c	/^nnlist_t * nnlist_new_noalloc (int n, int k)$/;"	f
+nnlist_s	kmlsh.h	/^struct nnlist_s {$/;"	s
+nnlist_t	kmlsh.h	/^typedef struct nnlist_s nnlist_t;$/;"	t	typeref:struct:nnlist_s
+no	sorting.c	/^  int no;                       \/* index in the vals table *\/$/;"	m	struct:__anon8	file:
+npt	nn.c	/^  int npt;$/;"	m	struct:__anon3	file:
+nt	nn.c	/^  int nt;$/;"	m	struct:__anon4	file:
+numpy	ynumpy.py	/^import numpy$/;"	i
+os	threads.py	/^import sys,time,inspect,thread,threading,os,errno,types,traceback$/;"	i
+os	yutils.py	/^import sys, os, types$/;"	i
+p	gmm.c	/^  const float *v,*mu_old,*p;$/;"	m	struct:__anon2	file:
+p	gmm.c	/^  float * p;$/;"	m	struct:__anon1	file:
+parallel_map	threads.py	/^def parallel_map(n,l,f):$/;"	f
+parse_as_type	yutils.py	/^def parse_as_type(ty,sval):$/;"	f
+parse_nt	threads.py	/^def parse_nt(nt):$/;"	f
+pca_online_accu	matrix.c	/^void pca_online_accu (struct pca_online_s * pca, const float * v, long n)$/;"	f
+pca_online_complete	matrix.c	/^void pca_online_complete (struct pca_online_s * pca)$/;"	f
+pca_online_complete_part	matrix.c	/^void pca_online_complete_part (struct pca_online_s * pca, int nev)$/;"	f
+pca_online_cov	matrix.c	/^void pca_online_cov (struct pca_online_s * pca)$/;"	f
+pca_online_delete	matrix.c	/^void pca_online_delete (struct pca_online_s * pca)$/;"	f
+pca_online_new	matrix.c	/^pca_online_t * pca_online_new (int d)$/;"	f
+pca_online_project	matrix.c	/^void pca_online_project (const pca_online_t * pca, const float * v, float * vo, int d, long n, int dout)$/;"	f
+pca_online_s	matrix.h	/^struct pca_online_s {$/;"	s
+pca_online_t	matrix.h	/^typedef struct pca_online_s pca_online_t;$/;"	t	typeref:struct:pca_online_s
+pdb	ynumpy.py	/^import pdb $/;"	i
+perm	kmlsh.h	/^  int * perm;          \/* the vector ids, ordered by quantization index (all hash tables) *\/$/;"	m	struct:kmlsh_idx_s
+points	nn.c	/^  const float *points;$/;"	m	struct:__anon3	file:
+pool	threads.py	/^  pool=[]$/;"	v	class:VerbLock
+prepare_dir	yutils.py	/^def prepare_dir(fname):$/;"	f
+prod	threads.py	/^  def prod(self,x):$/;"	m	class:ProducerConsumer
+prod_end	threads.py	/^  def prod_end(self):$/;"	m	class:ProducerConsumer
+ptr	machinedeps.c	/^  void *ptr;$/;"	m	struct:__anon5	file:
+random_init	kmeans.c	/^static void random_init(long d, int n, int k, const float * v, int * sel, $/;"	f	file:
+random_orthogonal_basis	matrix.c	/^float *random_orthogonal_basis (int di)$/;"	f
+real	eigs.c	/^typedef float real;$/;"	t	file:
+real	gmm.c	106;"	d	file:
+real	gmm.c	93;"	d	file:
+real	matrix.c	59;"	d	file:
+real	matrix.c	98;"	d	file:
+real	nn.c	65;"	d	file:
+real	nn.c	78;"	d	file:
+real_free	machinedeps.c	/^  void (*real_free) (void *__ptr, const __malloc_ptr_t);$/;"	m	struct:__anon6	file:
+real_malloc	machinedeps.c	/^  void *(*real_malloc) (size_t __size, const __malloc_ptr_t);$/;"	m	struct:__anon6	file:
+real_memalign	machinedeps.c	/^  void *(*real_memalign) (size_t __alignment, size_t __size, const __malloc_ptr_t);$/;"	m	struct:__anon6	file:
+real_realloc	machinedeps.c	/^  void *(*real_realloc) (void *__ptr, size_t __size, const __malloc_ptr_t);$/;"	m	struct:__anon6	file:
+release	threads.py	/^  def release(self):$/;"	m	class:VerbLock
+release	threads.py	/^  def release(self):$/;"	m	class:WritePriorityLock
+release	threads.py	/^  def release(self,o_in):$/;"	m	class:Pool
+release_w	threads.py	/^  def release_w(self):$/;"	m	class:WritePriorityLock
+resid	eigs.c	/^  float *resid,*workd,*workl;$/;"	m	struct:arpack_eigs_t	file:
+s	machinedeps.c	/^  malloc_stats_t s;$/;"	m	struct:__anon6	file:
+select	eigs.c	/^  logical *select;$/;"	m	struct:arpack_eigs_t	file:
+set_frac	threads.py	/^  def set_frac(self,frac):$/;"	m	class:ThreadsafeState
+set_frac	threads.py	/^  set_frac=None$/;"	v	class:DummyState
+set_from_dict	threads.py	/^  def set_from_dict(self,d):$/;"	m	class:ThreadsafeState
+siftgeo_read	ynumpy.py	/^def siftgeo_read(filename):$/;"	f
+siftgeo_read	yutils.py	/^def siftgeo_read(filename, outfmt='bvec'):$/;"	f
+sigma	gmm.c	/^  float *mu,*sigma,*w;$/;"	m	struct:__anon2	file:
+sigma	gmm.h	/^  float * sigma;  \/*!< diagonal of the covariance matrix (d-by-k) *\/$/;"	m	struct:gmm_s
+size	machinedeps.c	/^  size_t size;$/;"	m	struct:__anon5	file:
+size	threads.py	/^  def size(self):$/;"	m	class:Pool
+softmax_ref	gmm.c	/^static void softmax_ref(int k, int n, const float *f, float *p, float *coeffs) {$/;"	f	file:
+spectral_clustering	spectral_clustering.c	/^double spectral_clustering (int d, int n, int k, double sigma, int niter,$/;"	f
+spfvec_inner_product	vector.c	/^float spfvec_inner_product (int *idx1, float *val1, int nz1, $/;"	f
+spfvec_to_fvec	vector.c	/^float * spfvec_to_fvec (int * idx, float * v, int nz, int n)$/;"	f
+spivec_to_ivec	vector.c	/^int * spivec_to_ivec (int * idx, int * v, int nz, int n)$/;"	f
+split_a	nn.c	/^  int split_a;  $/;"	m	struct:__anon4	file:
+sqr	gmm.c	/^double static inline sqr (double x)$/;"	f	file:
+sqr	nn.c	/^static double sqr (double x)$/;"	f	file:
+stats	threads.py	/^  def stats(self):$/;"	m	class:Cache
+stop_t	sorting.c	/^} stop_t;$/;"	t	typeref:struct:__anon8	file:
+sys	threads.py	/^import sys,time,inspect,thread,threading,os,errno,types,traceback$/;"	i
+sys	yutils.py	/^import sys, os, types$/;"	i
+tab_to_sort	sorting.c	/^static __thread const int * tab_to_sort;$/;"	v	file:
+tab_to_sort_f	sorting.c	/^static __thread const float * tab_to_sort_f;$/;"	v	file:
+the_allocate_lock	threads.py	/^the_allocate_lock=thread.allocate_lock$/;"	v
+thread	threads.py	/^import sys,time,inspect,thread,threading,os,errno,types,traceback$/;"	i
+threading	threads.py	/^import sys,time,inspect,thread,threading,os,errno,types,traceback$/;"	i
+time	threads.py	/^import sys,time,inspect,thread,threading,os,errno,types,traceback$/;"	i
+traceback	threads.py	/^import sys,time,inspect,thread,threading,os,errno,types,traceback$/;"	i
+types	threads.py	/^import sys,time,inspect,thread,threading,os,errno,types,traceback$/;"	i
+types	yutils.py	/^import sys, os, types$/;"	i
+v	eigs.c	/^  float *v;$/;"	m	struct:arpack_eigs_t	file:
+v	gmm.c	/^  const float * v;$/;"	m	struct:__anon1	file:
+v	gmm.c	/^  const float *v,*mu_old,*p;$/;"	m	struct:__anon2	file:
+val	binheap.h	/^  float * val;     \/*!< valid values are val[1] to val[k] *\/$/;"	m	struct:fbinheap_s
+val	sorting.c	/^  float val;$/;"	m	struct:__anon8	file:
+vec_L1	nn.c	/^static float vec_L1 (const float *a, const float *b, int n) $/;"	f	file:
+vec_chi2	nn.c	/^static float vec_chi2 (const float *a, const float *b, int n) $/;"	f	file:
+vecfile_stats	yutils.py	/^def vecfile_stats (fname, d, fmt):$/;"	f
+vlad_compute	vlad.c	/^void vlad_compute(int k, int d, const float *centroids, $/;"	f
+vlad_compute_subsets	vlad.c	/^void vlad_compute_subsets(int k, int d, const float *centroids, $/;"	f
+vlad_compute_weighted	vlad.c	/^void vlad_compute_weighted(int k, int d, const float *centroids, $/;"	f
+vw	nn.c	/^  int *vw;$/;"	m	struct:__anon3	file:
+vw_weights	nn.c	/^  const float *vw_weights;$/;"	m	struct:__anon3	file:
+vwdis	nn.c	/^  float *vwdis;$/;"	m	struct:__anon3	file:
+w	gmm.c	/^  float *mu,*sigma,*w;$/;"	m	struct:__anon2	file:
+w	gmm.h	/^  float * w;      \/*!< weights of the mixture elements (size k) *\/$/;"	m	struct:gmm_s
+wait_end	threads.py	/^  def wait_end(self):$/;"	m	class:ProducerConsumer
+workd	eigs.c	/^  float *resid,*workd,*workl;$/;"	m	struct:arpack_eigs_t	file:
+workl	eigs.c	/^  float *resid,*workd,*workl;$/;"	m	struct:arpack_eigs_t	file:
+xvec_fread	vector.c	/^static int xvec_fread (long unit_size, FILE * f, void * v, int d_alloc)$/;"	f	file:
+xvecs_fread	vector.c	/^static long xvecs_fread (long unit_size, FILE * f, void * v, long n, int d_alloc)$/;"	f	file:
+xvecs_fsize	vector.c	/^static long xvecs_fsize(long unitsize, const char * fname, int *d_out, int *n_out)$/;"	f	file:
+xvecs_new_read	vector.c	/^static int xvecs_new_read (long unitsize, const char *fname, int *d_out, void **v_out)$/;"	f	file:
+yael	threads.py	/^import yael$/;"	i
+yael	ynumpy.py	/^import yael$/;"	i
+yael	yutils.py	/^import yael$/;"	i

@@ -1,0 +1,595 @@
+#include "pqsearchengine.h"
+#include <iostream>
+#include <fstream>
+#include <dirent.h>
+#include <stdlib.h>
+#include <string.h>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <assert.h>
+extern "C" {
+#include "../contrib/yael/kmeans.h"
+#include "../contrib/yael/nn.h"
+#include "../contrib/yael/vector.h"
+#include "../contrib/yael/sorting.h"
+#include "../contrib/yael/machinedeps.h"
+}
+
+using namespace std;
+PqSearchEngine::PqSearchEngine(\
+        int maxFtrNum,
+        int coarse_k=256       //coarse clusters;
+        ): m_maxBaseFeatureNum(maxFtrNum),\
+           m_maxQueryFeatureNum(maxFtrNum),\
+           m_baseFeatures(NULL),\
+           m_queryFeatures(NULL),\
+           m_coarse_k(coarse_k),\
+           m_coarse_assign(NULL),\
+           m_coarse_cluster_element_num(NULL),\
+           m_coarse_cluster_assign_idx(NULL),\
+           m_coarse_cluster_idx(NULL),\
+           m_coarse_centroids(NULL)
+{
+    int i=0;
+    for(i=0;i<NSQ;i++) {
+        m_pq_centroids[i]=NULL;
+        m_pq_assign[i]=NULL;
+    }
+}
+
+void PqSearchEngine::readFeatures(char *pfeatureDir,float *pftr,\
+                                int featureNum,int* fileidx,\
+                                vector<string>* filenamevec){
+    DIR             *pDir;
+    struct dirent   *ent;
+
+    pDir=opendir(pfeatureDir);
+
+    // clear the vectors
+    if (fileidx) {
+        assert(filenamevec!=NULL);
+        filenamevec->clear();
+    }
+
+    int read_ftr_num=0;
+    float* read_ftr_point=pftr;
+    while(NULL !=(ent=readdir(pDir))) {
+        //sub dir
+        if(ent->d_type&DT_DIR) {
+            continue;
+        }
+        //file
+        else {
+            int tmp_num=_readFeatureFile(read_ftr_point,\
+                    pfeatureDir,ent->d_name);
+            
+            /* construct the feature -> filename map */
+            if (fileidx) {
+                string fn(ent->d_name);
+                filenamevec->push_back(fn);
+                int file_index=filenamevec->size()-1;
+
+                int i=0;
+                for (i=read_ftr_num;i<read_ftr_num+tmp_num;i++) {
+                    fileidx[i]=file_index;
+                }
+            }
+
+            read_ftr_num+=tmp_num;
+            //cout<<"read feature num:"<<read_ftr_num<<endl;
+            read_ftr_point=read_ftr_num*FEATURE_DIM+pftr;
+            if(featureNum-read_ftr_num==0) break;
+        }
+    }
+    cout<<"close dir:"<<pfeatureDir<<endl;
+    closedir(pDir);
+}
+
+
+int PqSearchEngine::_readFeatureFile(float* pftr,char* dir,char *filename){
+    string fn(filename);
+    m_vfilename.push_back(fn);
+
+    char filepath[512];
+    sprintf(filepath,"%s/%s",dir,filename);
+    ifstream ifile(filepath,ios::binary);
+    FtrFileHeader header;
+    if (ifile.good()) {
+
+        // read feature file header
+        ifile.read((char*)&header,sizeof(FtrFileHeader));
+
+       // cout<<"header.m_version:"<<header.m_version<<endl;
+       // cout<<"header.m_ftr_num:"<<header.m_ftr_num<<endl;
+       // cout<<"header.m_ftr_len:"<<header.m_ftr_len<<endl;
+       // cout<<"header.m_ftr_dim:"<<header.m_ftr_dim<<endl;
+        // read all features from file
+        for (int i=0;i<header.m_ftr_num;i++) {
+            Feature tmp_ftr;
+            ifile.read((char*)&(tmp_ftr.m_metaftr),\
+                    sizeof(MetaFeature));
+            tmp_ftr.m_filenameIdx=m_vfilename.size()-1;
+            //m_vfeature.pushback(tmp_ftr);
+            memcpy(pftr+i*FEATURE_DIM,\
+                   tmp_ftr.m_metaftr.m_descriptor,\
+                   FEATURE_LEN);
+        }
+    }
+    ifile.close();
+    return header.m_ftr_num; 
+}
+
+int PqSearchEngine::getFeatureNum(char *feature_dir) {
+    DIR* pdir=opendir(feature_dir);
+    struct dirent   *ent;
+
+    char filepath[512];
+    int feature_num=0;
+    while(NULL!=(ent=readdir(pdir))) {
+        if(ent->d_type&DT_DIR) {
+            continue;
+        }
+        else {
+            sprintf(filepath,"%s/%s",feature_dir,ent->d_name);
+            ifstream ifile(filepath,ios::binary);
+            if(ifile.good()){
+                // read feature file header
+                FtrFileHeader header;
+                ifile.read((char*)&header,sizeof(FtrFileHeader));
+
+                feature_num+=header.m_ftr_num;
+            }
+            ifile.close();
+        }
+    }
+    closedir(pdir);
+    return feature_num;
+}
+
+int PqSearchEngine::readBaseFeatures(char* base_dir) {
+
+    //m_pBaseFeatureDir=base_dir;
+    m_baseFeatureNum=getFeatureNum(base_dir);
+    if(m_baseFeatureNum>m_maxBaseFeatureNum) {
+        printf("there is more features than maxBaseFeatureNum:%d",m_baseFeatureNum);
+        m_baseFeatureNum=m_maxBaseFeatureNum;
+    }
+    cout<<"read base feature num:"<<m_baseFeatureNum<<endl;
+    //m_baseFeatures=fvec_new(m_baseFeatureNum*FEATURE_DIM);
+    m_baseFeatures=(float*)malloc(m_baseFeatureNum*FEATURE_DIM*sizeof(float));
+    m_baseFeatureFileIdx=ivec_new(m_baseFeatureNum);
+    readFeatures(base_dir,m_baseFeatures,m_baseFeatureNum,\
+            m_baseFeatureFileIdx,&m_vfilename);
+    return m_baseFeatureNum;
+}
+
+void PqSearchEngine::coarse_idx_with_centroid(char* centroid_file) {
+
+    m_coarse_centroids=fvec_new(FEATURE_DIM*m_coarse_k);
+    m_coarse_assign = ivec_new(m_featureNum);
+    m_coarse_cluster_element_num = ivec_new_0(m_coarse_k); 
+
+    ifstream ifile(centroid_file,ios::binary);
+    if(!ifile.good()){
+        cout<<"No coarse.centroids file !"<<endl;
+        exit(0);
+    }
+    for(int i=0;i<m_coarse_k;i++) {
+        ifile.read((char*)(m_coarse_centroids+i*FEATURE_DIM),\
+                FEATURE_LEN);
+    }
+    
+
+    int nq = m_featureNum;
+    int nb = m_coarse_k;
+    int d  = FEATURE_DIM;
+    int w  = 1;
+    int *assign = m_coarse_assign;
+    float *base = m_coarse_centroids;
+    float *query = m_baseFeatures;
+    float* dis = fvec_new(w*nq);
+    int distype = 2;
+    /*! number of threads */
+    int nt=count_cpu();
+    nt=1;
+
+    knn_full_thread(distype,nq,nb,d,w,base,\
+                    query,NULL,assign,dis,nt);
+
+    for (int i=0;i<m_featureNum;i++) {
+        m_coarse_cluster_element_num[assign[i]]++;
+    }
+    m_coarse_cluster_assign_idx = ivec_new(m_featureNum); /* inverted file elements */
+    ivec_sort_index(m_coarse_assign,m_featureNum,m_coarse_cluster_assign_idx );
+
+    /* inverted file elements */
+    m_coarse_cluster_idx=ivec_new(m_coarse_k);
+    /* compute the coarse cluster index */
+    m_coarse_cluster_idx[0]=0;
+    for (int i=1;i<m_coarse_k;i++) {
+        m_coarse_cluster_idx[i]=m_coarse_cluster_idx[i-1]+\
+                              m_coarse_cluster_element_num[i-1];
+    }
+}
+
+
+/* coarse index */
+void PqSearchEngine::coarse_idx() {
+    int d       = FEATURE_DIM;
+    int n       = m_baseFeatureNum;
+    int coarse_k= m_coarse_k;
+    int niter   = 100;
+    float * v   = m_baseFeatures;
+    
+    int nt      = count_cpu();
+    nt      = 1;
+    cout<<"->cpu number:"<<nt<<endl;
+    int flags   = nt | KMEANS_INIT_RANDOM | KMEANS_QUIET; 
+    //int flags   = nt | KMEANS_INIT_RANDOM  ; 
+    
+    m_coarse_assign = ivec_new(n);
+    m_coarse_cluster_element_num = ivec_new_0(coarse_k); 
+    m_coarse_centroids=fvec_new(d*coarse_k);
+
+    int redo    = 1;
+    int seed    = 0;
+
+    float err   = kmeans(d,n,coarse_k,niter,m_baseFeatures,\
+                            flags,seed,redo,\
+                            m_coarse_centroids,NULL,\
+                            m_coarse_assign,\
+                            m_coarse_cluster_element_num );
+	fprintf (stderr, "->kmeans err = %.3f\n", err);
+    int i=0,j=0,k=0;
+
+    m_coarse_cluster_assign_idx = ivec_new(n); /* inverted file elements */
+    ivec_sort_index(m_coarse_assign,n,m_coarse_cluster_assign_idx );
+
+    /* inverted file elements */
+    m_coarse_cluster_idx=ivec_new(m_coarse_k);
+    /* compute the coarse cluster index */
+    m_coarse_cluster_idx[0]=0;
+    for (i=1;i<m_coarse_k;i++) {
+        m_coarse_cluster_idx[i]=m_coarse_cluster_idx[i-1]+\
+                              m_coarse_cluster_element_num[i-1];
+    }
+
+    cout<<"coarse index end!"<<endl;
+    
+}
+void PqSearchEngine::writeCentroids(char*centroid_file){
+    ofstream ofile(centroid_file);
+    if(!ofile.good()){
+        cout<<"cann't open centroid_file:"<<centroid_file<<endl;
+        exit(0);
+    }
+    ofile.write((char*)m_coarse_centroids,m_coarse_k*FEATURE_LEN);
+    ofile.close();
+}
+
+/*! product quantization */
+void PqSearchEngine::pq(){
+    int i=0,j=0,k=0;
+
+    cout<<"m_baseFeatureNum:"<<m_baseFeatureNum<<endl;
+    /*! compute the residual vector. */
+    for (i=0;i<m_baseFeatureNum;i++) {
+        for (j=0;j<FEATURE_DIM;j++) {
+            m_baseFeatures[i*FEATURE_DIM+j]-=\
+                m_coarse_centroids[m_coarse_assign[i]*FEATURE_DIM+j];
+        }
+    }
+
+    /*! parameter for kmeans */
+    int redo    = 1;
+    int seed    = 0;
+    int nt      =count_cpu();
+    nt      =1;
+    int flags   = nt | KMEANS_INIT_RANDOM | KMEANS_QUIET; 
+    int niter   = 100;
+    
+    float* subv = fvec_new(m_baseFeatureNum*LSQ);
+
+    for (k=0;k<NSQ;k++) {
+        m_pq_assign[k]      = ivec_new(m_baseFeatureNum);
+        m_pq_centroids[k]   = fvec_new(LSQ*KS);
+
+        for (i=0;i<m_baseFeatureNum;i++) {
+            for(j=0;j<LSQ;j++) {
+                subv[i*LSQ+j]=m_baseFeatures[i*FEATURE_DIM+k*LSQ+j];
+            }
+        }
+        float err = kmeans(LSQ,m_baseFeatureNum,KS,\
+                            niter,subv,flags,seed,redo,\
+                            m_pq_centroids[k],NULL,\
+                            m_pq_assign[k],NULL);
+        //fprintf (stderr, "->kmeans subquantizer %d err = %.3f\n",\
+                                                k,err);
+    }
+    free(subv);
+
+    cout<<"free subv"<<endl;
+   // if(m_baseFeatures)
+   //     free(m_baseFeatures);
+   // cout<<"free m_baseFeatures"<<endl;
+   // m_baseFeatures=NULL;
+
+}
+
+
+void PqSearchEngine::search_dir(char *feature_dir){
+    cout<<"->start to search"<<feature_dir<<endl;
+    DIR* pdir=opendir(feature_dir);
+    struct dirent   *ent;
+
+    char result_file[512];
+    sprintf(result_file,"%s_search_rslt",feature_dir);
+    ofstream of("search_result.txt");
+    of.close();
+    while(NULL!=(ent=readdir(pdir))) {
+        if(ent->d_type&DT_DIR) {
+            continue;
+        }
+        else {
+            search_file(feature_dir,ent->d_name);
+        }
+    }
+}
+
+void PqSearchEngine::search_file(char*pdir,char* filename) {
+
+    if(m_queryFeatures) {
+        free(m_queryFeatures);
+        m_queryFeatureNum=0;
+    }
+
+    char filepath[512];
+    sprintf(filepath,"%s/%s",pdir,filename);
+    cout<<"->search :"<<filepath<<endl;
+    int query_num=0;
+    ifstream ifile(filepath,ios::binary);
+    if(ifile.good()){
+        // read feature file header
+        FtrFileHeader header;
+        ifile.read((char*)&header,sizeof(FtrFileHeader));
+
+        query_num=header.m_ftr_num;
+        m_queryFeatures = fvec_new(query_num*FEATURE_DIM);
+        for (int i=0;i<header.m_ftr_num;i++) {
+            MetaFeature tmp_ftr;
+            ifile.read((char*)&(tmp_ftr),\
+                    sizeof(MetaFeature));
+            memcpy(m_queryFeatures+i*FEATURE_DIM,\
+                   tmp_ftr.m_descriptor,\
+                   FEATURE_LEN);
+        }
+    }
+
+    int nq = query_num;
+    cout<<"->read query points number:"<<nq<<endl;
+    int nb = m_model.m_coarse_k;
+    int d  = FEATURE_DIM;
+    /*! number of coarse cluster neighbours*/
+    int w  = m_w;
+    int *assign = ivec_new(w*nq);
+    float *base = m_model.m_coarse_centroids;
+    float *query = m_queryFeatures;
+    float* dis = fvec_new(w*nq);
+
+    int nt = count_cpu();
+    nt = 1;
+
+    int distype=2;
+
+    knn_full_thread(distype,nq,nb,d,w,base,\
+                    query,NULL,assign,dis,nt);
+    free(dis);
+   
+    int i,j,k=0,l=0,bin,q=0;
+
+    /* debug */
+    for (i=0;i<w*nq;i++) {
+        if(assign[i]>m_coarse_k){
+            cout<<"assign["<<i<<"]:"<<assign[i]<<">coarse_k\t";
+            exit(0);
+            cout<<endl;
+        }
+    }
+    cout<<endl;
+
+    vector<pair<float,int> >* qresultvec =\
+                                 new vector<pair<float,int> >[nq];
+
+
+    for(bin=0;bin<w;bin++) {
+
+        // compute residual vector
+        float* qresidual=fvec_new(nq*FEATURE_DIM);
+
+        for (j=0;j<nq;j++) {
+            for (k=0;k<FEATURE_DIM;k++) {
+                qresidual[j*FEATURE_DIM+k]=\
+                m_queryFeatures[j*FEATURE_DIM+k]-\
+                m_model.m_coarse_centroids[assign[j*w+bin]*FEATURE_DIM+k];
+            }
+        }
+
+        float* sub_v=fvec_new(LSQ*nq);
+        // compute the query residual and centroids distance table.
+        //float* dis_tab[NSQ][KS*nq];
+        float* dis_tab[NSQ];
+
+        for (k=0;k<NSQ;k++) {
+            for (i=0;i<nq;i++) {
+                for (j=0;j<LSQ;j++) {
+                    sub_v[i*LSQ+j]=qresidual[i*FEATURE_DIM+j];
+                }
+            }
+
+            dis_tab[k]=fvec_new(nq*KS);
+            compute_cross_distances(LSQ,nq,KS,sub_v,\
+                    m_pq_centroids[k],dis_tab[k]);
+        }
+
+        free(qresidual);
+        qresidual=NULL;
+        free(sub_v);
+        sub_v=NULL;
+
+        for (i=0;i<nq;i++) {
+            int cluster_idx=assign[i*w+bin];
+            int cluster_element_num=\
+                         m_model.m_coarse_cluster_element_num[cluster_idx];
+
+            int index=m_model.m_coarse_cluster_idx[cluster_idx];
+                //cout<<index<<"\t"<<endl;
+            for (k=0;k<cluster_element_num;k++) {
+                float tmp_dis=0;
+                int base_idx= m_model.m_coarse_cluster_assign_idx[index+k];
+                for (l=0;l<NSQ;l++) {
+                    int pq_idx=m_model.m_pq_assign[l][base_idx];
+                    tmp_dis+=dis_tab[l][pq_idx+KS*i];
+                }
+                pair<float,int> dist(tmp_dis,base_idx);
+                qresultvec[i].push_back(dist);
+            }
+        }
+        for(k=0;k<NSQ;k++) {
+            free(dis_tab[k]);
+        }
+    }
+
+    //parameter
+    int sift_neighbor_num_threshold=15;
+    map<string,int> votes;
+    for (i=0;i<nq;i++){
+        sort(qresultvec[i].begin(),qresultvec[i].end());
+        int k=qresultvec[i].size();
+        int num=k>sift_neighbor_num_threshold?sift_neighbor_num_threshold:k;
+
+        for (int iter=0;iter<num;iter++) {
+            string fn=m_ds.getFtrFileName(qresultvec[i][iter].second);
+     //m_vfilename[m_baseFeatureFileIdx[qresultvec[i][iter].second]];
+            votes[fn]++;
+            //cout<<qresultvec[i][k].first<<"\t"\
+      <<m_vfilename[m_baseFeatureFileIdx[qresultvec[i][k].second]];
+        }
+    }
+
+
+    vector<pair<int,string> > invVotes;
+    map<string,int>::iterator itr;
+    for (itr=votes.begin();itr!=votes.end();itr++) {
+        invVotes.push_back(pair<int,string>(itr->second,itr->first));
+    }
+    sort(invVotes.begin(),invVotes.end());
+
+    vector<pair<int,string> >::reverse_iterator revitr; 
+    ofstream ofile("search_result.txt",ios::app);
+    cout<<"filename:"<<filename<<endl;
+    ofile<<"filename:"<<filename<<endl;
+    
+    //parameter
+    int pic_neighbor_num_threshold=20;
+    
+    for(i=0,revitr=invVotes.rbegin();i<pic_neighbor_num_threshold&&revitr!=invVotes.rend();i++,revitr++){
+        cout<<revitr->second<< " scores:"<<revitr->first<<endl;
+        ofile<<revitr->second<< " scores:"<<revitr->first<<endl;
+    }
+    ofile<<endl;
+    ofile.close();
+
+    cout<<endl;
+}
+
+bool PqSearchEngine::loadEngine(char *engine_file) {
+    char *filepath=engine_file;
+    ifstream ifile(filepath);
+    if(ifile.good()) {
+        cout<<"->start to load engine from :"<<filepath<<endl;
+        /* read data set parameter */
+        ifile.read((char*)&(m_ds.m_num),sizeof(int));
+        ifile.read((char*)&(m_ds.m_dim),sizeof(int));
+        m_ds.m_featureFileIdx=ivec_new(m_ds.m_num);
+        ifile.read((char*)m_ds.m_featureFileIdx,sizeof(int)*(m_ds.m_num));
+
+        /* read pqmodel parameter */
+        ifile.read((char*)&(m_model.m_coarse_k),sizeof(int));
+        m_model.m_coarse_assign=ivec_new(m_ds.m_num);
+        ifile.read((char*)(m_model.m_coarse_assign),sizeof(int)*m_ds.m_num);
+
+        m_model.m_coarse_cluster_element_num=ivec_new(m_model.m_coarse_k);
+        ifile.read((char*)(m_model.m_coarse_cluster_element_num),sizeof(int)*(m_model.m_coarse_k));
+        m_model.m_coarse_cluster_assign_idx=ivec_new(m_ds.m_num);
+        ifile.read((char*)(m_model.m_coarse_cluster_assign_idx),sizeof(int)*m_ds.m_num);
+        m_model.m_coarse_cluster_idx=ivec_new(m_model.m_coarse_k);
+        ifile.read((char*)(m_model.m_coarse_cluster_idx),sizeof(int)*(m_model.m_coarse_k));
+        m_model.m_coarse_centroids=fvec_new(m_model.m_coarse_k*m_ds.m_num);
+        ifile.read((char*)(m_model.m_coarse_centroids),sizeof(float)*(m_model.m_coarse_k)*(m_ds.m_num));
+
+        for (int i=0;i<NSQ;i++) {
+            m_model.m_pq_assign[i]=ivec_new(m_ds.m_num);
+            ifile.read((char*)(m_model.m_pq_assign[i]),sizeof(int)*m_ds.m_num);
+            m_model.m_pq_centroids[i]=fvec_new(LSQ*KS);
+            ifile.read((char*)(m_model.m_pq_centroids[i]),sizeof(float)*LSQ*KS);
+        }
+
+        int filename_size=0;
+        ifile.read((char*)&filename_size,sizeof(int));
+        for(int i=0;i<filename_size;i++) {
+            string tmp;
+            ifile>>tmp;
+            m_ds.m_vfilename.push_back(tmp);
+        }
+    }
+    else {
+        return false;
+    }
+    ifile.close();
+    cout<<"->pq search engine loaded"<<endl;
+    return true;
+
+}
+
+void PqSearchEngine::writeEngine(char* engine_file) {
+    char *filepath=engine_file;
+    ofstream ofile(filepath);
+    if(ofile.good()) {
+        cout<<"->start to write engine to :"<<filepath<<endl;
+        /* write data set parameter */
+        ofile.write((char*)&m_ds.getFeatureNum(),sizeof(int));
+        ofile.write((char*)&m_ds.getFeatureDim(),sizeof(int));
+        ofile.write((char*)m_ds.m_featureFileIdx,sizeof(int)*ds.m_num);
+
+        /* write pqmodel parameter */
+        ofile.write((char*)&(m_model.m_coarse_k),sizeof(int));
+        ofile.write((char*)(m_model.m_coarse_assign),sizeof(int)*m_ds.m_num);
+        ofile.write((char*)(m_model.m_coarse_cluster_element_num),sizeof(int)*(m_model.m_coarse_k));
+        ofile.write((char*)(m_model.m_coarse_cluster_assign_idx),sizeof(int)*m_ds.m_num);
+        ofile.write((char*)(m_model.m_coarse_cluster_idx),sizeof(int)*(m_model.m_coarse_k));
+        ofile.write((char*)(m_model.m_coarse_centroids),sizeof(float)*(m_model.m_coarse_k)*(m_ds.m_dim));
+
+        for (int i=0;i<NSQ;i++) {
+            ofile.write((char*)(m_model.m_pq_assign[i]),sizeof(int)*m_ds.m_num);
+            ofile.write((char*)(m_model.m_pq_centroids[i]),sizeof(float)*LSQ*KS);
+        }
+
+        int filename_size=m_ds.m_vfilename.size();
+        ofile.write((char*)&filename_size,sizeof(int));
+        for(int i=0;i<filename_size;i++) {
+            ofile<<m_ds.m_vfilename[i]<<endl;
+        }
+    }
+    else {
+        cout<< "can't open output file:"<<filepath<<endl;
+    }
+
+    ofile.close();
+    cout<<"->write engine ended!"<<endl;
+}
+
+
+
+
+
